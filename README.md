@@ -76,3 +76,47 @@ Redis / DB
 - cache را روشن کن و hit/miss را اندازه بگیر.
 - log format سفارشی بساز.
 - rate limiting را تست کن.
+
+___
+
+# Phase 3 - OS and Networking
+
+___
+
+### Networking
+
+___
+
+- TCP handshake
+- keep-alive
+- congestion control
+- socket backlog
+- SYN queue
+- accept queue
+- TLS handshake
+- HTTP/1.1
+- HTTP/2 multiplexing
+- HTTP/3 و QUIC
+- DNS
+- proxy headers
+- X-Forwarded-For
+- PROXY protocol
+
+___
+
+### Linux / OS
+
+___
+- process model
+- file descriptors
+- epoll
+- non-blocking I/O
+- zero-copy concept
+- sendfile
+- memory allocation
+- page cache
+- kernel tuning
+- ulimit
+- systemd
+- cgroups
+- container networking
