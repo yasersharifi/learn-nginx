@@ -1,27 +1,23 @@
+---
+slug: /
+title: مقدمه
+sidebar_position: 1
+---
+
 # مسیر یادگیری Nginx
 
 یادداشت‌های شخصی برای یادگیری Nginx، Linux و Git — از نصب و reverse proxy تا شبکه و production.
 
 | # | فصل | زمان تقریبی |
 | ---: | --- | --- |
-| 1 | [فاز ۱: پایه عملی Nginx](nginx/phase1.md) | ۲–۳ هفته |
-| 2 | [فاز ۲: Production Operations](nginx/phase2.md) | ۴–۶ هفته |
-| 3 | [فاز ۳: شبکه و سیستم‌عامل](nginx/phase3-network.md) | ۲–۳ ماه |
-| 4 | [Linux برای توسعه‌دهنده](linux/linux.md) | — |
-| 5 | [grep](linux/grep.md) | — |
-| 6 | [Git Pull و Fast-Forward](git/rebase-fast-forward.md) | — |
-| 7 | [HEAD در Git](git/head-guide.md) | — |
-| 8 | [سؤالات Git (Pull / Rebase)](git/rebase-questions.md) | — |
-
----
-
-## خواندن به‌صورت کتاب
-
-```bash
-./scripts/build-book.sh
-```
-
-بعد `book/index.html` را در مرورگر باز کن. متن فارسی راست‌چین است؛ کدها چپ‌چین.
+| 1 | [فاز ۱: پایه عملی Nginx](nginx/phase1) | ۲–۳ هفته |
+| 2 | [فاز ۲: Production Operations](nginx/phase2) | ۴–۶ هفته |
+| 3 | [فاز ۳: شبکه و سیستم‌عامل](nginx/phase3-network) | ۲–۳ ماه |
+| 4 | [Linux برای توسعه‌دهنده](linux/) | — |
+| 5 | [grep](linux/grep) | — |
+| 6 | [Git Pull و Fast-Forward](git/rebase-fast-forward) | — |
+| 7 | [HEAD در Git](git/head-guide) | — |
+| 8 | [سؤالات Git (Pull / Rebase)](git/rebase-questions) | — |
 
 ---
 
@@ -51,7 +47,3 @@
 ```
 
 برای هر موضوع: مستندات رسمی، یک config کوچک، عمداً یک چیز را اشتباه کن، log و metric را چک کن، بعد config را بهتر کن.
-
----
-
-راهنمای ویرایش: [HOW-TO-EDIT.md](../HOW-TO-EDIT.md)

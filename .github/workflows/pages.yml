@@ -1,4 +1,4 @@
-name: Deploy book to GitHub Pages
+name: Deploy Docusaurus to GitHub Pages
 
 on:
   push:
@@ -20,29 +20,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.x"
+          node-version: 20
+          cache: npm
 
-      - name: Install mdBook
-        run: |
-          curl -sSL \
-            https://github.com/rust-lang/mdBook/releases/download/v0.5.3/mdbook-v0.5.3-x86_64-unknown-linux-gnu.tar.gz \
-            | tar xz
-          sudo mv mdbook /usr/local/bin/
-          mdbook --version
+      - name: Install
+        run: npm ci
 
       - name: Build
-        run: |
-          python3 scripts/prepare-mdbook.py
-          mdbook build
-          mkdir -p book/theme/fonts
-          cp -f theme/fonts/*.woff2 book/theme/fonts/
+        run: npm run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book
+          path: build
 
   deploy:
     needs: build

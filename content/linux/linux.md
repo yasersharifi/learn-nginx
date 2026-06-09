@@ -1,3 +1,10 @@
+---
+title: Linux برای توسعه‌دهنده
+sidebar_label: Linux
+slug: /linux/
+sidebar_position: 1
+---
+
 # Linux برای توسعه‌دهنده
 
 برای کسی که فرانت و بک می‌زند و گاهی روی سرور کار می‌کند. sysadmin شدن هدف نیست — فقط log، سرویس، SSH و دیباگ روزمره.

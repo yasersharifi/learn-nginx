@@ -1,102 +1,64 @@
 # راهنمای ویرایش
 
-## ساختار مخزن
+## ساختار
 
 ```text
 learn-nginx/
-├── README.md                 ← صفحه اصلی GitHub
-├── HOW-TO-EDIT.md            ← همین فایل
-├── content/                  ← همهٔ markdownهای محتوا
-│   ├── introduction.md
-│   ├── nginx/
-│   │   ├── phase1.md
-│   │   ├── phase2.md
-│   │   └── phase3-network.md
-│   ├── linux/
-│   │   ├── linux.md
-│   │   └── grep.md
-│   └── git/
-│       ├── rebase-fast-forward.md
-│       ├── head-guide.md
-│       └── rebase-questions.md
-├── assets/images/
-├── book.toml
-├── theme/custom.css
-└── scripts/
-    ├── prepare-mdbook.py
-    └── build-book.sh
+├── content/                  ← markdown (منبع اصلی)
+├── static/fonts/               ← Vazir، Inter، JetBrains Mono
+├── src/css/custom.css          ← RTL، فونت‌ها
+├── docusaurus.config.ts        ← تنظیمات (TypeScript)
+├── sidebars.ts                 ← sidebar (TypeScript)
+├── tsconfig.json
+└── package.json
 ```
 
-فایل‌های `src/` و `book/` خودکار ساخته می‌شوند — **دستی edit نکن.**
+خروجی build در `build/` — commit نکن.
 
 ---
 
-## افزودن یا تغییر محتوا
-
-1. فایل را در `content/` ویرایش کن.
-2. build:
+## ویرایش محتوا
 
 ```bash
-./scripts/build-book.sh
+npm install
+npm start          # http://localhost:3000/learn-nginx/
+npm run build
+npm run typecheck  # بررسی TypeScript
 ```
-
-3. `book/index.html` را در مرورگر چک کن.
 
 ---
 
 ## فصل جدید
 
-1. فایل `.md` در `content/` بساز (مثلاً `content/git/my-topic.md`).
-2. در `scripts/prepare-mdbook.py` به `SOURCES` اضافه کن:
+1. فایل `.md` در `content/` بساز.
+2. در `sidebars.ts` اضافه کن.
+3. لینک در `content/introduction.md` و `README.md`.
 
-```python
-("git/my-topic.md", "git/my-topic.md", True),  # True = فارسی/RTL
-```
+Front matter:
 
-3. لینک را در `write_summary()` و `content/introduction.md` بگذار.
-4. لینک را در `README.md` (root) هم اضافه کن.
-5. `./scripts/build-book.sh`
-
+```yaml
 ---
-
-## قوانین نوشتن
-
-- متن ساده و مستقیم — مثل یادداشت برای خودت.
-- کد در بلوک markdown با زبان مشخص:
-
-````markdown
-```bash
-nginx -t
+title: عنوان
+sidebar_label: برچسب
+sidebar_position: 2
+---
 ```
-````
 
-- از calloutهای `[!NOTE]` استفاده نکن.
-- wrapper HTML مثل `<div dir="rtl">` لازم نیست.
-- تصاویر در `assets/images/`:
+صفحه انگلیسی:
+
+```yaml
+---
+title: grep
+className: en-doc
+---
+```
+
+لینک بین صفحات (بدون `.md`):
 
 ```markdown
-![توضیح](../../assets/images/my-diagram.png)
+[Linux](linux/)
+[فاز ۱](nginx/phase1)
 ```
-
-از داخل `content/nginx/` مسیر نسبی به assets: `../../assets/images/...`
-
----
-
-## mdBook
-
-**GitHub Pages:** https://yasersharifi.github.io/learn-nginx/
-
-Deploy خودکار با push به `main` (workflow: `.github/workflows/pages.yml`).
-
-اولین بار: repo → **Settings → Pages → Source: GitHub Actions**.
-
-```bash
-python3 scripts/prepare-mdbook.py
-./scripts/build-book.sh
-./.bin/mdbook serve                 # localhost:3000 (بهتر از file://)
-```
-
-`book.toml` برای GitHub Pages با `site-url = "/learn-nginx/"` تنظیم شده.
 
 ---
 
@@ -104,16 +66,21 @@ python3 scripts/prepare-mdbook.py
 
 | کاربرد | فونت |
 | --- | --- |
-| متن فارسی | **Vazir** |
-| متن انگلیسی (مثلاً grep) | **Inter** |
-| کد | **JetBrains Mono** |
-
-فایل‌ها در `theme/fonts/`. تنظیمات: `theme/fonts.css` و `theme/custom.css`.
+| فارسی | Vazir |
+| انگلیسی | Inter |
+| کد | JetBrains Mono |
 
 ---
 
-## چک‌لیست قبل از commit
+## GitHub Pages
 
-- [ ] تغییرات فقط در `content/`، `assets/`، `theme/`، `scripts/`، `book.toml`، `README.md`
-- [ ] `./scripts/build-book.sh` بدون خطا
-- [ ] یک صفحه فارسی و یک بلوک کد در `book/index.html` درست است
+https://yasersharifi.github.io/learn-nginx/
+
+Deploy با push به `main` — workflow: `.github/workflows/pages.yml`
+
+---
+
+## چک‌لیست commit
+
+- [ ] `npm run build` بدون خطا
+- [ ] `npm run typecheck` بدون خطا

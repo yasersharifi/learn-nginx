@@ -1,3 +1,9 @@
+---
+title: grep
+sidebar_label: grep
+className: en-doc
+---
+
 # grep
 
 `grep` متن را داخل فایل یا خروجی دستور پیدا می‌کند. برای log، کد و pipe خیلی کاربرد دارد.

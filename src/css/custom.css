@@ -1,0 +1,171 @@
+/**
+ * Vazir (Persian) · Inter (English) · JetBrains Mono (code)
+ * RTL prose · LTR code blocks
+ */
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('@site/static/fonts/Vazir-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('@site/static/fonts/Vazir-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('@site/static/fonts/Vazir-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@site/static/fonts/Inter-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@site/static/fonts/Inter-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('@site/static/fonts/JetBrainsMono.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --fa-font: 'Vazir', Tahoma, Arial, sans-serif;
+  --en-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --mono-font: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  --ifm-font-family-base: var(--fa-font);
+  --ifm-heading-font-family: var(--fa-font);
+  --ifm-font-family-monospace: var(--mono-font);
+  --ifm-code-font-size: 90%;
+  --ifm-line-height-base: 1.85;
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.5rem;
+}
+
+html {
+  direction: rtl;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #1b1b1d;
+}
+
+body {
+  font-family: var(--fa-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar / footer UI */
+.navbar__title,
+.navbar__link,
+.footer,
+.menu__link,
+.pagination-nav__label,
+.table-of-contents__link {
+  font-family: var(--fa-font);
+}
+
+/* English chapter */
+article.en-doc,
+.en-doc {
+  direction: ltr;
+  text-align: left;
+  font-family: var(--en-font);
+  line-height: 1.75;
+}
+
+article.en-doc h1,
+article.en-doc h2,
+article.en-doc h3,
+article.en-doc h4,
+.en-doc h1,
+.en-doc h2,
+.en-doc h3,
+.en-doc h4 {
+  font-family: var(--en-font);
+  font-weight: 600;
+}
+
+/* Code — always LTR */
+pre,
+code,
+.prism-code,
+.theme-code-block,
+.token-line {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+  font-family: var(--mono-font) !important;
+}
+
+.theme-doc-markdown pre {
+  border-radius: 8px;
+}
+
+/* TOC on RTL pages */
+.table-of-contents {
+  direction: rtl;
+  text-align: right;
+}
+
+article.en-doc .table-of-contents {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Sidebar */
+.theme-doc-sidebar-menu .menu__link {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Pagination */
+.pagination-nav {
+  direction: rtl;
+}
+
+article.en-doc ~ .pagination-nav,
+.pagination-nav--en {
+  direction: ltr;
+}
+
+/* Tables */
+.markdown table {
+  direction: rtl;
+}
+
+article.en-doc table {
+  direction: ltr;
+}
+
+.markdown table code {
+  direction: ltr;
+}
