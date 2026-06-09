@@ -1,3 +1,5 @@
+<div dir="rtl" align="right">
+
 # HEAD در Git چیست؟
 
 `HEAD` در Git یعنی:
@@ -18,7 +20,34 @@ main: A---B---C
 
 ---
 
+<details>
+<summary><strong>📑 فهرست مطالب</strong> — <em>کلیک برای باز / بسته کردن</em></summary>
+
+| # | بخش |
+| ---: | --- |
+| 1 | [1. HEAD دقیقاً به چه چیزی اشاره می‌کند؟](#1-head-دقیقاً-به-چه-چیزی-اشاره-میکند؟) |
+| 2 | [2. دیدن وضعیت HEAD](#2-دیدن-وضعیت-head) |
+| 3 | [3. HEAD~1 یعنی چی؟](#3-head1-یعنی-چی؟) |
+| 4 | [4. HEAD^ یعنی چی؟](#4-head-یعنی-چی؟) |
+| 5 | [5. Detached HEAD چیست؟](#5-detached-head-چیست؟) |
+| 6 | [6. خطر Detached HEAD](#6-خطر-detached-head) |
+| 7 | [7. برگشتن از Detached HEAD به branch](#7-برگشتن-از-detached-head-به-branch) |
+| 8 | [8. کاربردهای رایج HEAD](#8-کاربردهای-رایج-head) |
+| 9 | [9. استفاده از HEAD با reset](#9-استفاده-از-head-با-reset) |
+| 10 | [10. تفاوت reset soft، mixed و hard](#10-تفاوت-reset-soft،-mixed-و-hard) |
+| 11 | [11. جمع‌بندی سریع](#11-جمعبندی-سریع) |
+| 12 | [12. پیشنهاد عملی](#12-پیشنهاد-عملی) |
+
+[↑ بالا](#head-در-git-چیست؟)
+
+</details>
+
+---
+
 ## 1. HEAD دقیقاً به چه چیزی اشاره می‌کند؟
+
+<details>
+<summary>1. HEAD دقیقاً به چه چیزی اشاره می‌کند؟</summary>
 
 در حالت معمول، `HEAD` مستقیم به commit اشاره نمی‌کند؛ بلکه به branch فعلی اشاره می‌کند، و آن branch به آخرین commit خودش اشاره دارد.
 
@@ -60,7 +89,22 @@ main: A---B---C---D
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [بعدی →](#2-دیدن-وضعیت-head)
+
+</div>
+
+
+---
+
 ## 2. دیدن وضعیت HEAD
+
+<details>
+<summary>2. دیدن وضعیت HEAD</summary>
 
 برای دیدن وضعیت فعلی repository:
 
@@ -84,7 +128,22 @@ git show HEAD
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#1-head-دقیقاً-به-چه-چیزی-اشاره-میکند؟) · [بعدی →](#3-head1-یعنی-چی؟)
+
+</div>
+
+
+---
+
 ## 3. HEAD~1 یعنی چی؟
+
+<details>
+<summary>3. HEAD~1 یعنی چی؟</summary>
 
 `HEAD~1` یعنی:
 
@@ -129,7 +188,22 @@ git show HEAD~2
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#2-دیدن-وضعیت-head) · [بعدی →](#4-head-یعنی-چی؟)
+
+</div>
+
+
+---
+
 ## 4. HEAD^ یعنی چی؟
+
+<details>
+<summary>4. HEAD^ یعنی چی؟</summary>
 
 `HEAD^` هم معمولاً یعنی parent قبلی `HEAD`.
 
@@ -169,7 +243,22 @@ HEAD^2
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#3-head1-یعنی-چی؟) · [بعدی →](#5-detached-head-چیست؟)
+
+</div>
+
+
+---
+
 ## 5. Detached HEAD چیست؟
+
+<details>
+<summary>5. Detached HEAD چیست؟</summary>
 
 `detached HEAD` یعنی:
 
@@ -207,7 +296,22 @@ main: A---B---C---D
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#4-head-یعنی-چی؟) · [بعدی →](#6-خطر-detached-head)
+
+</div>
+
+
+---
+
 ## 6. خطر Detached HEAD
+
+<details>
+<summary>6. خطر Detached HEAD</summary>
 
 اگر در حالت detached HEAD تغییر بدهی و commit بزنی، آن commit روی هیچ branch مشخصی نیست.
 
@@ -227,7 +331,22 @@ git checkout -b my-new-branch
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#5-detached-head-چیست؟) · [بعدی →](#7-برگشتن-از-detached-head-به-branch)
+
+</div>
+
+
+---
+
 ## 7. برگشتن از Detached HEAD به branch
+
+<details>
+<summary>7. برگشتن از Detached HEAD به branch</summary>
 
 برای برگشتن به branch اصلی:
 
@@ -249,7 +368,22 @@ git checkout main
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#6-خطر-detached-head) · [بعدی →](#8-کاربردهای-رایج-head)
+
+</div>
+
+
+---
+
 ## 8. کاربردهای رایج HEAD
+
+<details>
+<summary>8. کاربردهای رایج HEAD</summary>
 
 ### دیدن آخرین commit
 
@@ -283,7 +417,22 @@ git checkout HEAD -- file.txt
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#7-برگشتن-از-detached-head-به-branch) · [بعدی →](#9-استفاده-از-head-با-reset)
+
+</div>
+
+
+---
+
 ## 9. استفاده از HEAD با reset
+
+<details>
+<summary>9. استفاده از HEAD با reset</summary>
 
 `HEAD` خیلی وقت‌ها با `git reset` استفاده می‌شود.
 
@@ -329,7 +478,22 @@ git reset --hard HEAD~1
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#8-کاربردهای-رایج-head) · [بعدی →](#10-تفاوت-reset-soft،-mixed-و-hard)
+
+</div>
+
+
+---
+
 ## 10. تفاوت reset soft، mixed و hard
+
+<details>
+<summary>10. تفاوت reset soft، mixed و hard</summary>
 
 ```txt
 --soft   = commit حذف می‌شود، تغییرات staged می‌مانند
@@ -357,7 +521,22 @@ git reset --hard HEAD~1
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#9-استفاده-از-head-با-reset) · [بعدی →](#11-جمعبندی-سریع)
+
+</div>
+
+
+---
+
 ## 11. جمع‌بندی سریع
+
+<details>
+<summary>11. جمع‌بندی سریع</summary>
 
 ```txt
 HEAD          = جایی که الان در Git ایستاده‌ای
@@ -371,7 +550,22 @@ detached HEAD = وقتی HEAD مستقیم روی commit است، نه روی br
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#10-تفاوت-reset-soft،-mixed-و-hard) · [بعدی →](#12-پیشنهاد-عملی)
+
+</div>
+
+
+---
+
 ## 12. پیشنهاد عملی
+
+<details>
+<summary>12. پیشنهاد عملی</summary>
 
 برای کار روزمره این‌ها را بلد باشی کافی است:
 
@@ -388,3 +582,15 @@ git reset --hard HEAD~1
 مهم‌ترین نکته:
 
 > `HEAD` یعنی نقطه‌ای که الان Git وضعیت فعلی پروژه را از آن حساب می‌کند.
+
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#head-در-git-چیست؟) · [← قبلی](#11-جمعبندی-سریع)
+
+</div>
+
+
+</div>

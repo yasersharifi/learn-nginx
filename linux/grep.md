@@ -1,4 +1,6 @@
-# `grep` Command Usage
+<div dir="ltr" align="left">
+
+# grep Command Usage
 
 `grep` is a command-line tool used to search for text patterns inside files or command output.
 
@@ -16,7 +18,28 @@ In simple terms, `grep` finds lines that match a word, phrase, or pattern.
 
 ---
 
+<details>
+<summary><strong>📑 Table of Contents</strong> — <em>click to expand / collapse</em></summary>
+
+| # | Section |
+| ---: | --- |
+| 1 | [Basic Usage](#basic-usage) |
+| 2 | [Common Examples](#common-examples) |
+| 3 | [Useful Options](#useful-options) |
+| 4 | [Developer Example](#developer-example) |
+| 5 | [Modern Alternative](#modern-alternative) |
+| 6 | [Summary](#summary) |
+
+[↑ Top](#grep-command-usage)
+
+</details>
+
+---
+
 ## Basic Usage
+
+<details>
+<summary>Basic Usage</summary>
 
 ```bash
 grep "error" app.log
@@ -26,7 +49,22 @@ This searches inside `app.log` and prints every line that contains `error`.
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ Top](#grep-command-usage) · [Next →](#common-examples)
+
+</div>
+
+
+---
+
 ## Common Examples
+
+<details>
+<summary>Common Examples</summary>
 
 ### Search for text in a file
 
@@ -88,7 +126,22 @@ Searches the output of `ps aux` for lines containing `nginx`.
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ Top](#grep-command-usage) · [← Previous](#basic-usage) · [Next →](#useful-options)
+
+</div>
+
+
+---
+
 ## Useful Options
+
+<details>
+<summary>Useful Options</summary>
 
 | Option | Meaning |
 |---|---|
@@ -102,7 +155,22 @@ Searches the output of `ps aux` for lines containing `nginx`.
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ Top](#grep-command-usage) · [← Previous](#common-examples) · [Next →](#developer-example)
+
+</div>
+
+
+---
+
 ## Developer Example
+
+<details>
+<summary>Developer Example</summary>
 
 ```bash
 grep -r "function login" .
@@ -112,7 +180,22 @@ This searches the whole current project for `function login`.
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ Top](#grep-command-usage) · [← Previous](#useful-options) · [Next →](#modern-alternative)
+
+</div>
+
+
+---
+
 ## Modern Alternative
+
+<details>
+<summary>Modern Alternative</summary>
 
 For large codebases, many developers use `ripgrep`, which is usually faster than `grep`.
 
@@ -126,7 +209,22 @@ However, `grep` is still very useful because it is available by default on most 
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ Top](#grep-command-usage) · [← Previous](#developer-example) · [Next →](#summary)
+
+</div>
+
+
+---
+
 ## Summary
+
+<details>
+<summary>Summary</summary>
 
 `grep` is useful for:
 
@@ -137,3 +235,15 @@ However, `grep` is still very useful because it is available by default on most 
 - Debugging from the terminal
 
 It is one of the most important command-line tools for developers and system administrators.
+
+</details>
+
+
+<div align="center">
+
+[↑ Top](#grep-command-usage) · [← Previous](#modern-alternative)
+
+</div>
+
+
+</div>

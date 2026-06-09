@@ -1,6 +1,9 @@
-حتماً. فاز ۱ باید کاملاً عملی، پایه‌ای و عمیق باشد. هدف این فاز این نیست که همه Nginx را یاد بگیری؛ هدف این است که **Nginx را به‌عنوان ابزار واقعی جلوی یک اپلیکیشن بفهمی و بتوانی با اعتمادبه‌نفس کانفیگ اولیه production-like بسازی.**
+<div dir="rtl" align="right">
 
 # فاز ۱: پایه عملی Nginx
+
+حتماً. فاز ۱ باید کاملاً عملی، پایه‌ای و عمیق باشد. هدف این فاز این نیست که همه Nginx را یاد بگیری؛ هدف این است که **Nginx را به‌عنوان ابزار واقعی جلوی یک اپلیکیشن بفهمی و بتوانی با اعتمادبه‌نفس کانفیگ اولیه production-like بسازی.**
+
 
 ## هدف اصلی فاز ۱
 
@@ -22,7 +25,48 @@
 
 ---
 
+<details>
+<summary><strong>📑 فهرست مطالب</strong> — <em>کلیک برای باز / بسته کردن</em></summary>
+
+| # | بخش |
+| ---: | --- |
+| 1 | [تصویر ذهنی درست از Nginx](#تصویر-ذهنی-درست-از-nginx) |
+| 2 | [هفته اول: فهم ساختار Nginx و کانفیگ پایه](#هفته-اول-فهم-ساختار-nginx-و-کانفیگ-پایه) |
+| 3 | [ساختار کلی Nginx config](#ساختار-کلی-nginx-config) |
+| 4 | [معنی contextهای مهم](#معنی-contextهای-مهم) |
+| 5 | [تمرین روز ۱](#تمرین-روز-۱) |
+| 6 | [نکته مهم: root و tryfiles](#نکته-مهم-root-و-tryfiles) |
+| 7 | [هفته اول، روز ۲: static file serving](#هفته-اول،-روز-۲-static-file-serving) |
+| 8 | [هفته اول، روز ۳: ساخت اولین Reverse Proxy](#هفته-اول،-روز-۳-ساخت-اولین-reverse-proxy) |
+| 9 | [حالا proxy headerها را درست کن](#حالا-proxy-headerها-را-درست-کن) |
+| 10 | [نکته مهم درباره proxypass](#نکته-مهم-درباره-proxypass) |
+| 11 | [هفته اول، روز ۴: route کردن چند سرویس](#هفته-اول،-روز-۴-route-کردن-چند-سرویس) |
+| 12 | [هفته اول، روز ۵: errorهای رایج](#هفته-اول،-روز-۵-errorهای-رایج) |
+| 13 | [هفته دوم: servername، location matching، logs و load balancing](#هفته-دوم-servername،-location-matching،-logs-و-load-balancing) |
+| 14 | [روز ۷: location matching](#روز-۷-location-matching) |
+| 15 | [روز ۸: access log و error log](#روز-۸-access-log-و-error-log) |
+| 16 | [روز ۹: basic load balancing](#روز-۹-basic-load-balancing) |
+| 17 | [روز ۱۰: basic health/failure behavior](#روز-۱۰-basic-healthfailure-behavior) |
+| 18 | [هفته سوم: HTTPS، WebSocket، config hygiene و پروژه نهایی](#هفته-سوم-https،-websocket،-config-hygiene-و-پروژه-نهایی) |
+| 19 | [روز ۱۲: WebSocket proxy](#روز-۱۲-websocket-proxy) |
+| 20 | [روز ۱۳: ساختار تمیز config](#روز-۱۳-ساختار-تمیز-config) |
+| 21 | [روز ۱۴: پروژه نهایی فاز ۱](#روز-۱۴-پروژه-نهایی-فاز-۱) |
+| 22 | [checklist فاز ۱](#checklist-فاز-۱) |
+| 23 | [سؤال‌هایی که باید بتوانی جواب بدهی](#سؤالهایی-که-باید-بتوانی-جواب-بدهی) |
+| 24 | [برنامه روزانه پیشنهادی فاز ۱](#برنامه-روزانه-پیشنهادی-فاز-۱) |
+| 25 | [تمرین نهایی فاز ۱](#تمرین-نهایی-فاز-۱) |
+| 26 | [Nginx Phase 1 Report](#nginx-phase-1-report) |
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx)
+
+</details>
+
+---
+
 # تصویر ذهنی درست از Nginx
+
+<details>
+<summary>تصویر ذهنی درست از Nginx</summary>
 
 اول باید جایگاه Nginx را بفهمی.
 
@@ -63,7 +107,22 @@ Nginx as:
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [بعدی →](#هفته-اول-فهم-ساختار-nginx-و-کانفیگ-پایه)
+
+</div>
+
+
+---
+
 # هفته اول: فهم ساختار Nginx و کانفیگ پایه
+
+<details>
+<summary>هفته اول: فهم ساختار Nginx و کانفیگ پایه</summary>
 
 ## روز ۱: نصب و اجرای اولیه
 
@@ -159,7 +218,22 @@ sudo nginx -T
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#تصویر-ذهنی-درست-از-nginx) · [بعدی →](#ساختار-کلی-nginx-config)
+
+</div>
+
+
+---
+
 # ساختار کلی Nginx config
+
+<details>
+<summary>ساختار کلی Nginx config</summary>
 
 Nginx config از context و directive ساخته می‌شود.
 
@@ -229,7 +303,22 @@ upstream
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-اول-فهم-ساختار-nginx-و-کانفیگ-پایه) · [بعدی →](#معنی-contextهای-مهم)
+
+</div>
+
+
+---
+
 # معنی contextهای مهم
+
+<details>
+<summary>معنی contextهای مهم</summary>
 
 ## 1. main context
 
@@ -387,7 +476,22 @@ location / {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#ساختار-کلی-nginx-config) · [بعدی →](#تمرین-روز-۱)
+
+</div>
+
+
+---
+
 # تمرین روز ۱
+
+<details>
+<summary>تمرین روز ۱</summary>
 
 یک فایل HTML ساده بساز:
 
@@ -440,7 +544,22 @@ curl http://localhost
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#معنی-contextهای-مهم) · [بعدی →](#نکته-مهم-root-و-tryfiles)
+
+</div>
+
+
+---
+
 # نکته مهم: `root` و `try_files`
+
+<details>
+<summary>نکته مهم: root و tryfiles</summary>
 
 این بخش خیلی مهم است چون خیلی‌ها با همین گیر می‌کنند.
 
@@ -478,7 +597,22 @@ Nginx دنبال این فایل می‌گردد:
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#تمرین-روز-۱) · [بعدی →](#هفته-اول،-روز-۲-static-file-serving)
+
+</div>
+
+
+---
+
 # هفته اول، روز ۲: static file serving
+
+<details>
+<summary>هفته اول، روز ۲: static file serving</summary>
 
 حالا باید static serving را درست بفهمی.
 
@@ -577,7 +711,22 @@ alias مسیر location را جایگزین می‌کند.
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#نکته-مهم-root-و-tryfiles) · [بعدی →](#هفته-اول،-روز-۳-ساخت-اولین-reverse-proxy)
+
+</div>
+
+
+---
+
 # هفته اول، روز ۳: ساخت اولین Reverse Proxy
+
+<details>
+<summary>هفته اول، روز ۳: ساخت اولین Reverse Proxy</summary>
 
 حالا یک app ساده Node.js بساز.
 
@@ -642,7 +791,22 @@ curl http://localhost
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-اول،-روز-۲-static-file-serving) · [بعدی →](#حالا-proxy-headerها-را-درست-کن)
+
+</div>
+
+
+---
+
 # حالا proxy headerها را درست کن
+
+<details>
+<summary>حالا proxy headerها را درست کن</summary>
 
 config بهتر:
 
@@ -677,7 +841,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-اول،-روز-۳-ساخت-اولین-reverse-proxy) · [بعدی →](#نکته-مهم-درباره-proxypass)
+
+</div>
+
+
+---
+
 # نکته مهم درباره `proxy_pass`
+
+<details>
+<summary>نکته مهم درباره proxypass</summary>
 
 این دو config فرق دارند:
 
@@ -743,7 +922,22 @@ Request:
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#حالا-proxy-headerها-را-درست-کن) · [بعدی →](#هفته-اول،-روز-۴-route-کردن-چند-سرویس)
+
+</div>
+
+
+---
+
 # هفته اول، روز ۴: route کردن چند سرویس
+
+<details>
+<summary>هفته اول، روز ۴: route کردن چند سرویس</summary>
 
 فرض کن دو سرویس داری:
 
@@ -792,7 +986,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#نکته-مهم-درباره-proxypass) · [بعدی →](#هفته-اول،-روز-۵-errorهای-رایج)
+
+</div>
+
+
+---
+
 # هفته اول، روز ۵: errorهای رایج
+
+<details>
+<summary>هفته اول، روز ۵: errorهای رایج</summary>
 
 ## 502 Bad Gateway
 
@@ -907,7 +1116,22 @@ proxy_read_timeout 30s;
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-اول،-روز-۴-route-کردن-چند-سرویس) · [بعدی →](#هفته-دوم-servername،-location-matching،-logs-و-load-balancing)
+
+</div>
+
+
+---
+
 # هفته دوم: server_name، location matching، logs و load balancing
+
+<details>
+<summary>هفته دوم: servername، location matching، logs و load balancing</summary>
 
 ## روز ۶: `server_name` و virtual hosts
 
@@ -990,7 +1214,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-اول،-روز-۵-errorهای-رایج) · [بعدی →](#روز-۷-location-matching)
+
+</div>
+
+
+---
+
 # روز ۷: location matching
+
+<details>
+<summary>روز ۷: location matching</summary>
 
 این بخش بسیار مهم است.
 
@@ -1063,7 +1302,22 @@ Exact match اولویت بالایی دارد.
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-دوم-servername،-location-matching،-logs-و-load-balancing) · [بعدی →](#روز-۸-access-log-و-error-log)
+
+</div>
+
+
+---
+
 # روز ۸: access log و error log
+
+<details>
+<summary>روز ۸: access log و error log</summary>
 
 ## access log
 
@@ -1134,7 +1388,22 @@ access_log /var/log/nginx/access.log main_ext;
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۷-location-matching) · [بعدی →](#روز-۹-basic-load-balancing)
+
+</div>
+
+
+---
+
 # روز ۹: basic load balancing
+
+<details>
+<summary>روز ۹: basic load balancing</summary>
 
 سه app ساده اجرا کن.
 
@@ -1242,7 +1511,22 @@ upstream node_apps {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۸-access-log-و-error-log) · [بعدی →](#روز-۱۰-basic-healthfailure-behavior)
+
+</div>
+
+
+---
+
 # روز ۱۰: basic health/failure behavior
+
+<details>
+<summary>روز ۱۰: basic health/failure behavior</summary>
 
 در نسخه open source، health check فعال پیشرفته مثل NGINX Plus نداری، ولی می‌توانی رفتار failure را با پارامترهای upstream کنترل کنی.
 
@@ -1277,7 +1561,22 @@ sudo tail -f /var/log/nginx/error.log
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۹-basic-load-balancing) · [بعدی →](#هفته-سوم-https،-websocket،-config-hygiene-و-پروژه-نهایی)
+
+</div>
+
+
+---
+
 # هفته سوم: HTTPS، WebSocket، config hygiene و پروژه نهایی
+
+<details>
+<summary>هفته سوم: HTTPS، WebSocket، config hygiene و پروژه نهایی</summary>
 
 ## روز ۱۱: HTTPS پایه
 
@@ -1332,7 +1631,22 @@ curl -k https://localhost
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۱۰-basic-healthfailure-behavior) · [بعدی →](#روز-۱۲-websocket-proxy)
+
+</div>
+
+
+---
+
 # روز ۱۲: WebSocket proxy
+
+<details>
+<summary>روز ۱۲: WebSocket proxy</summary>
 
 برای WebSocket باید headerهای upgrade را درست pass کنی.
 
@@ -1386,7 +1700,22 @@ location /socket/ {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#هفته-سوم-https،-websocket،-config-hygiene-و-پروژه-نهایی) · [بعدی →](#روز-۱۳-ساختار-تمیز-config)
+
+</div>
+
+
+---
+
 # روز ۱۳: ساختار تمیز config
+
+<details>
+<summary>روز ۱۳: ساختار تمیز config</summary>
 
 به‌جای اینکه همه‌چیز را در یک فایل شلوغ بریزی، common config بساز.
 
@@ -1447,7 +1776,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۱۲-websocket-proxy) · [بعدی →](#روز-۱۴-پروژه-نهایی-فاز-۱)
+
+</div>
+
+
+---
+
 # روز ۱۴: پروژه نهایی فاز ۱
+
+<details>
+<summary>روز ۱۴: پروژه نهایی فاز ۱</summary>
 
 در پایان فاز ۱ یک lab کامل بساز.
 
@@ -1538,7 +1882,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۱۳-ساختار-تمیز-config) · [بعدی →](#checklist-فاز-۱)
+
+</div>
+
+
+---
+
 # checklist فاز ۱
+
+<details>
+<summary>checklist فاز ۱</summary>
 
 در پایان فاز ۱ باید بتوانی این‌ها را انجام بدهی:
 
@@ -1574,7 +1933,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#روز-۱۴-پروژه-نهایی-فاز-۱) · [بعدی →](#سؤالهایی-که-باید-بتوانی-جواب-بدهی)
+
+</div>
+
+
+---
+
 # سؤال‌هایی که باید بتوانی جواب بدهی
+
+<details>
+<summary>سؤال‌هایی که باید بتوانی جواب بدهی</summary>
 
 اگر واقعاً فاز ۱ را خوب خوانده باشی، باید بتوانی به این‌ها جواب بدهی:
 
@@ -1611,7 +1985,22 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#checklist-فاز-۱) · [بعدی →](#برنامه-روزانه-پیشنهادی-فاز-۱)
+
+</div>
+
+
+---
+
 # برنامه روزانه پیشنهادی فاز ۱
+
+<details>
+<summary>برنامه روزانه پیشنهادی فاز ۱</summary>
 
 ## روز ۱
 
@@ -1709,12 +2098,43 @@ server {
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#سؤالهایی-که-باید-بتوانی-جواب-بدهی) · [بعدی →](#تمرین-نهایی-فاز-۱)
+
+</div>
+
+
+---
+
 # تمرین نهایی فاز ۱
+
+<details>
+<summary>تمرین نهایی فاز ۱</summary>
 
 یک فایل Markdown برای خودت بساز و به این سؤال‌ها جواب بده:
 
 ```md
+
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#برنامه-روزانه-پیشنهادی-فاز-۱) · [بعدی →](#nginx-phase-1-report)
+
+</div>
+
+
+---
+
 # Nginx Phase 1 Report
+
+<details>
+<summary>Nginx Phase 1 Report</summary>
 
 ## Architecture
 
@@ -1770,3 +2190,15 @@ Write 10 things you learned.
 ```
 
 این گزارش خیلی مهم است. چون فقط «خواندن» کافی نیست. باید بتوانی چیزی که فهمیدی را توضیح بدهی. وقتی بتوانی کانفیگت را برای یک نفر دیگر توضیح بدهی، تازه واقعاً یاد گرفته‌ای.
+
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#فاز-۱-پایه-عملی-nginx) · [← قبلی](#تمرین-نهایی-فاز-۱)
+
+</div>
+
+
+</div>

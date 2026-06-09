@@ -1,3 +1,5 @@
+<div dir="rtl" align="right">
+
 # راهنمای ساده Git Pull، Fast-Forward، Merge و Rebase
 
 این داکیومنت برای توضیح ساده و عملی چند مفهوم مهم در Git نوشته شده است:
@@ -11,7 +13,34 @@
 
 ---
 
+<details>
+<summary><strong>📑 فهرست مطالب</strong> — <em>کلیک برای باز / بسته کردن</em></summary>
+
+| # | بخش |
+| ---: | --- |
+| 1 | [1. git pull چیست؟](#1-git-pull-چیست؟) |
+| 2 | [2. Fast-Forward یعنی چی؟](#2-fast-forward-یعنی-چی؟) |
+| 3 | [3. وقتی Fast-Forward ممکن نیست](#3-وقتی-fast-forward-ممکن-نیست) |
+| 4 | [4. Merge چیست؟](#4-merge-چیست؟) |
+| 5 | [5. Rebase چیست؟](#5-rebase-چیست؟) |
+| 6 | [6. خطای divergent branches یعنی چی؟](#6-خطای-divergent-branches-یعنی-چی؟) |
+| 7 | [7. تنظیم پیش‌فرض Git برای pull](#7-تنظیم-پیشفرض-git-برای-pull) |
+| 8 | [8. کدام گزینه بهتر است؟](#8-کدام-گزینه-بهتر-است؟) |
+| 9 | [9. دستورهای کاربردی روزمره](#9-دستورهای-کاربردی-روزمره) |
+| 10 | [10. اگر هنگام Rebase conflict پیش آمد](#10-اگر-هنگام-rebase-conflict-پیش-آمد) |
+| 11 | [11. اگر بعد از Rebase نتوانستی Push کنی](#11-اگر-بعد-از-rebase-نتوانستی-push-کنی) |
+| 12 | [12. جمع‌بندی سریع](#12-جمعبندی-سریع) |
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase)
+
+</details>
+
+---
+
 ## 1. git pull چیست؟
+
+<details>
+<summary>1. git pull چیست؟</summary>
 
 دستور `git pull` یعنی:
 
@@ -41,7 +70,22 @@ Git اول تغییرات remote را می‌گیرد، بعد باید تصمی
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [بعدی →](#2-fast-forward-یعنی-چی؟)
+
+</div>
+
+
+---
+
 ## 2. Fast-Forward یعنی چی؟
+
+<details>
+<summary>2. Fast-Forward یعنی چی؟</summary>
 
 `fast-forward` ساده‌ترین حالت آپدیت شدن branch است.
 
@@ -80,7 +124,22 @@ local:  A---B---C
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#1-git-pull-چیست؟) · [بعدی →](#3-وقتی-fast-forward-ممکن-نیست)
+
+</div>
+
+
+---
+
 ## 3. وقتی Fast-Forward ممکن نیست
+
+<details>
+<summary>3. وقتی Fast-Forward ممکن نیست</summary>
 
 گاهی هم تو روی branch لوکال commit داده‌ای، هم remote commit جدید دارد.
 
@@ -110,7 +169,22 @@ divergent branches
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#2-fast-forward-یعنی-چی؟) · [بعدی →](#4-merge-چیست؟)
+
+</div>
+
+
+---
+
 ## 4. Merge چیست؟
+
+<details>
+<summary>4. Merge چیست؟</summary>
 
 `merge` یعنی Git دو مسیر جداشده را با یک commit جدید یکی کند.
 
@@ -159,7 +233,22 @@ A---B---D---M
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#3-وقتی-fast-forward-ممکن-نیست) · [بعدی →](#5-rebase-چیست؟)
+
+</div>
+
+
+---
+
 ## 5. Rebase چیست؟
+
+<details>
+<summary>5. Rebase چیست؟</summary>
 
 `rebase` یعنی Git commitهای لوکال تو را برمی‌دارد و دوباره روی آخرین وضعیت remote می‌چیند.
 
@@ -202,7 +291,22 @@ A---B---C---D'
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#4-merge-چیست؟) · [بعدی →](#6-خطای-divergent-branches-یعنی-چی؟)
+
+</div>
+
+
+---
+
 ## 6. خطای divergent branches یعنی چی؟
+
+<details>
+<summary>6. خطای divergent branches یعنی چی؟</summary>
 
 ممکن است موقع `git pull` این خطا را ببینی:
 
@@ -262,7 +366,22 @@ git pull --ff-only
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#5-rebase-چیست؟) · [بعدی →](#7-تنظیم-پیشفرض-git-برای-pull)
+
+</div>
+
+
+---
+
 ## 7. تنظیم پیش‌فرض Git برای pull
+
+<details>
+<summary>7. تنظیم پیش‌فرض Git برای pull</summary>
 
 Git از تو می‌خواهد مشخص کنی که پیش‌فرض pull چه باشد.
 
@@ -292,7 +411,22 @@ git config --global pull.ff only
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#6-خطای-divergent-branches-یعنی-چی؟) · [بعدی →](#8-کدام-گزینه-بهتر-است؟)
+
+</div>
+
+
+---
+
 ## 8. کدام گزینه بهتر است؟
+
+<details>
+<summary>8. کدام گزینه بهتر است؟</summary>
 
 جواب بستگی به نوع کار دارد.
 
@@ -338,7 +472,22 @@ git config --global pull.ff only
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#7-تنظیم-پیشفرض-git-برای-pull) · [بعدی →](#9-دستورهای-کاربردی-روزمره)
+
+</div>
+
+
+---
+
 ## 9. دستورهای کاربردی روزمره
+
+<details>
+<summary>9. دستورهای کاربردی روزمره</summary>
 
 ### دیدن branch فعلی
 
@@ -390,7 +539,22 @@ git pull --ff-only
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#8-کدام-گزینه-بهتر-است؟) · [بعدی →](#10-اگر-هنگام-rebase-conflict-پیش-آمد)
+
+</div>
+
+
+---
+
 ## 10. اگر هنگام Rebase conflict پیش آمد
+
+<details>
+<summary>10. اگر هنگام Rebase conflict پیش آمد</summary>
 
 وقتی conflict رخ می‌دهد، Git rebase را متوقف می‌کند.
 
@@ -411,7 +575,22 @@ git rebase --abort
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#9-دستورهای-کاربردی-روزمره) · [بعدی →](#11-اگر-بعد-از-rebase-نتوانستی-push-کنی)
+
+</div>
+
+
+---
+
 ## 11. اگر بعد از Rebase نتوانستی Push کنی
+
+<details>
+<summary>11. اگر بعد از Rebase نتوانستی Push کنی</summary>
 
 چون rebase تاریخچه را بازنویسی می‌کند، ممکن است push معمولی رد شود.
 
@@ -431,7 +610,22 @@ git push --force
 
 ---
 
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#10-اگر-هنگام-rebase-conflict-پیش-آمد) · [بعدی →](#12-جمعبندی-سریع)
+
+</div>
+
+
+---
+
 ## 12. جمع‌بندی سریع
+
+<details>
+<summary>12. جمع‌بندی سریع</summary>
 
 ```txt
 fast-forward = فقط جلو بردن branch، بدون commit جدید
@@ -459,3 +653,15 @@ git pull --rebase
 ```bash
 git pull --ff-only
 ```
+
+</details>
+
+
+<div align="center">
+
+[↑ بالا](#راهنمای-ساده-git-pull،-fast-forward،-merge-و-rebase) · [← قبلی](#11-اگر-بعد-از-rebase-نتوانستی-push-کنی)
+
+</div>
+
+
+</div>
