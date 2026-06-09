@@ -40,7 +40,7 @@
 
 ## موضوعات اصلی
 
-* ساختار فایل `nginx.conf`
+### `nginx.conf` Structure:
 * contextها:
 
   * `main`
@@ -49,7 +49,7 @@
   * `server`
   * `location`
   * `upstream`
-* directiveها
+* directives
 * `proxy_pass`
 * static file serving
 * access log و error log
