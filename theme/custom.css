@@ -1,0 +1,85 @@
+/* Persian prose: RTL. Code blocks: always LTR from the left. */
+
+.content main {
+  direction: rtl;
+  text-align: right;
+}
+
+.content main .page-ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.content pre,
+.content pre > code,
+.content .hljs,
+.content .ace-editor,
+.content .highlight,
+.content .codeblock,
+.content table pre,
+.content table code.hljs {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+.content pre {
+  display: block;
+  overflow-x: auto;
+}
+
+.content p > code,
+.content li > code,
+.content td > code,
+.content th > code,
+.content h1 > code,
+.content h2 > code,
+.content h3 > code,
+.content h4 > code,
+.content blockquote code,
+.content a > code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+.content .table-wrapper,
+.content table {
+  direction: rtl;
+}
+
+.content table code,
+.content table pre {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.content .warning,
+.content .note,
+.content .tip,
+.content blockquote {
+  direction: rtl;
+  text-align: right;
+}
+
+.content .warning pre,
+.content .note pre,
+.content .tip pre,
+.content blockquote pre {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.menu-bar,
+.nav-chapters,
+.sidebar-scrollbox,
+#searchresults,
+.searchresults-outer {
+  direction: ltr;
+  text-align: left;
+}
+
+.sidebar-scrollbox .chapter-item a {
+  direction: rtl;
+  text-align: right;
+}

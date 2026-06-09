@@ -1,9 +1,7 @@
-<div dir="rtl" align="right">
-
 # فاز ۳: شبکه و سیستم‌عامل برای فهم عمیق Nginx
 
 در فاز ۱ یاد گرفتی Nginx را نصب و کانفیگ کنی.
-در فاز ۲ یاد گرفتی Nginx را production-like استفاده کنی: reverse proxy، timeout، buffering، caching، rate limit، HTTPS، logs و failure handling.
+در فاز ۲ timeout، cache، rate limit، HTTPS و failure handling را برای production تنظیم کردیم.
 
 اما اگر می‌خواهی Nginx را عمیق بفهمی، باید وارد لایه زیرین شوی:
 
@@ -27,48 +25,7 @@ Nginx بدون این مفاهیم فقط مجموعه‌ای از directiveها
 
 ---
 
-<details>
-<summary><strong>📑 فهرست مطالب</strong> — <em>کلیک برای باز / بسته کردن</em></summary>
-
-| # | بخش |
-| ---: | --- |
-| 1 | [هدف فاز ۳](#هدف-فاز-۳) |
-| 2 | [پیش‌نیازهای فاز ۳](#پیشنیازهای-فاز-۳) |
-| 3 | [تصویر ذهنی فاز ۳](#تصویر-ذهنی-فاز-۳) |
-| 4 | [ساختار کلی فاز ۳](#ساختار-کلی-فاز-۳) |
-| 5 | [هفته ۱: Process Model و Workerها](#هفته-۱-process-model-و-workerها) |
-| 6 | [هفته ۲: File Descriptor، Socket و Connection](#هفته-۲-file-descriptor،-socket-و-connection) |
-| 7 | [هفته ۳: TCP/IP و Connection Lifecycle](#هفته-۳-tcpip-و-connection-lifecycle) |
-| 8 | [هفته ۴: HTTP/1.1 و Reverse Proxy Behavior](#هفته-۴-http11-و-reverse-proxy-behavior) |
-| 9 | [هفته ۵: Non-blocking I/O، Event Loop و epoll](#هفته-۵-non-blocking-io،-event-loop-و-epoll) |
-| 10 | [هفته ۶: TLS، HTTP/2 و HTTP/3](#هفته-۶-tls،-http2-و-http3) |
-| 11 | [هفته ۷: Linux Limits، Kernel Tuning و Observability](#هفته-۷-linux-limits،-kernel-tuning-و-observability) |
-| 12 | [هفته ۸ تا ۱۲: Benchmarking، Tracing و Debugging](#هفته-۸-تا-۱۲-benchmarking،-tracing-و-debugging) |
-| 13 | [هفته ۸: Benchmarking پایه](#هفته-۸-benchmarking-پایه) |
-| 14 | [هفته ۹: Latency و Percentileها](#هفته-۹-latency-و-percentileها) |
-| 15 | [هفته ۱۰: strace و tcpdump در Debug واقعی](#هفته-۱۰-strace-و-tcpdump-در-debug-واقعی) |
-| 16 | [هفته ۱۱: perf و CPU Profiling](#هفته-۱۱-perf-و-cpu-profiling) |
-| 17 | [هفته ۱۲: پروژه نهایی فاز ۳](#هفته-۱۲-پروژه-نهایی-فاز-۳) |
-| 18 | [Config نمونه lab فاز ۳](#config-نمونه-lab-فاز-۳) |
-| 19 | [تست‌های نهایی فاز ۳](#تستهای-نهایی-فاز-۳) |
-| 20 | [Checklist فاز ۳](#checklist-فاز-۳) |
-| 21 | [سؤال‌هایی که باید بتوانی جواب بدهی](#سؤالهایی-که-باید-بتوانی-جواب-بدهی) |
-| 22 | [گزارش نهایی فاز ۳](#گزارش-نهایی-فاز-۳) |
-| 23 | [Nginx Phase 3 Systems Report](#nginx-phase-3-systems-report) |
-| 24 | [معیار موفقیت فاز ۳](#معیار-موفقیت-فاز-۳) |
-| 25 | [منابع پیشنهادی فاز ۳](#منابع-پیشنهادی-فاز-۳) |
-| 26 | [توصیه جدی برای فاز ۳](#توصیه-جدی-برای-فاز-۳) |
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx)
-
-</details>
-
----
-
 # هدف فاز ۳
-
-<details>
-<summary>هدف فاز ۳</summary>
 
 بعد از فاز ۳ باید بتوانی:
 
@@ -89,22 +46,7 @@ Nginx بدون این مفاهیم فقط مجموعه‌ای از directiveها
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [بعدی →](#پیشنیازهای-فاز-۳)
-
-</div>
-
-
----
-
 # پیش‌نیازهای فاز ۳
-
-<details>
-<summary>پیش‌نیازهای فاز ۳</summary>
 
 قبل از ورود به این فاز باید این‌ها را بلد باشی:
 
@@ -129,22 +71,7 @@ Nginx بدون این مفاهیم فقط مجموعه‌ای از directiveها
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هدف-فاز-۳) · [بعدی →](#تصویر-ذهنی-فاز-۳)
-
-</div>
-
-
----
-
 # تصویر ذهنی فاز ۳
-
-<details>
-<summary>تصویر ذهنی فاز ۳</summary>
 
 Nginx در ظاهر یک config file دارد، اما در عمل روی این لایه‌ها سوار است:
 
@@ -182,22 +109,7 @@ Client and upstream connections
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#پیشنیازهای-فاز-۳) · [بعدی →](#ساختار-کلی-فاز-۳)
-
-</div>
-
-
----
-
 # ساختار کلی فاز ۳
-
-<details>
-<summary>ساختار کلی فاز ۳</summary>
 
 این فاز را به ۸ بخش تقسیم می‌کنیم:
 
@@ -214,22 +126,7 @@ Client and upstream connections
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#تصویر-ذهنی-فاز-۳) · [بعدی →](#هفته-۱-process-model-و-workerها)
-
-</div>
-
-
----
-
 # هفته ۱: Process Model و Workerها
-
-<details>
-<summary>هفته ۱: Process Model و Workerها</summary>
 
 ## هدف هفته ۱
 
@@ -547,22 +444,7 @@ Worker منتظر یک connection خاص نمی‌ماند. فقط وقتی kern
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#ساختار-کلی-فاز-۳) · [بعدی →](#هفته-۲-file-descriptor،-socket-و-connection)
-
-</div>
-
-
----
-
 # هفته ۲: File Descriptor، Socket و Connection
-
-<details>
-<summary>هفته ۲: File Descriptor، Socket و Connection</summary>
 
 ## هدف هفته ۲
 
@@ -831,22 +713,7 @@ watch -n 1 'ss -tan | grep ":80" | wc -l'
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۱-process-model-و-workerها) · [بعدی →](#هفته-۳-tcpip-و-connection-lifecycle)
-
-</div>
-
-
----
-
 # هفته ۳: TCP/IP و Connection Lifecycle
-
-<details>
-<summary>هفته ۳: TCP/IP و Connection Lifecycle</summary>
 
 ## هدف هفته ۳
 
@@ -1116,22 +983,7 @@ ss -tan | grep ':80'
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۲-file-descriptor،-socket-و-connection) · [بعدی →](#هفته-۴-http11-و-reverse-proxy-behavior)
-
-</div>
-
-
----
-
 # هفته ۴: HTTP/1.1 و Reverse Proxy Behavior
-
-<details>
-<summary>هفته ۴: HTTP/1.1 و Reverse Proxy Behavior</summary>
 
 ## هدف هفته ۴
 
@@ -1364,22 +1216,7 @@ curl --limit-rate 10k http://localhost/large-file -o /tmp/out
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۳-tcpip-و-connection-lifecycle) · [بعدی →](#هفته-۵-non-blocking-io،-event-loop-و-epoll)
-
-</div>
-
-
----
-
 # هفته ۵: Non-blocking I/O، Event Loop و epoll
-
-<details>
-<summary>هفته ۵: Non-blocking I/O، Event Loop و epoll</summary>
 
 ## هدف هفته ۵
 
@@ -1641,22 +1478,7 @@ curl http://localhost/big.bin -o /dev/null
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۴-http11-و-reverse-proxy-behavior) · [بعدی →](#هفته-۶-tls،-http2-و-http3)
-
-</div>
-
-
----
-
 # هفته ۶: TLS، HTTP/2 و HTTP/3
-
-<details>
-<summary>هفته ۶: TLS، HTTP/2 و HTTP/3</summary>
 
 ## هدف هفته ۶
 
@@ -1859,22 +1681,7 @@ openssl s_client -alpn h2 -connect example.com:443 -servername example.com
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۵-non-blocking-io،-event-loop-و-epoll) · [بعدی →](#هفته-۷-linux-limits،-kernel-tuning-و-observability)
-
-</div>
-
-
----
-
 # هفته ۷: Linux Limits، Kernel Tuning و Observability
-
-<details>
-<summary>هفته ۷: Linux Limits، Kernel Tuning و Observability</summary>
 
 ## هدف هفته ۷
 
@@ -2053,43 +1860,13 @@ log_format perf_json escape=json
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۶-tls،-http2-و-http3) · [بعدی →](#هفته-۸-تا-۱۲-benchmarking،-tracing-و-debugging)
-
-</div>
-
-
----
-
 # هفته ۸ تا ۱۲: Benchmarking، Tracing و Debugging
-
-<details>
-<summary>هفته ۸ تا ۱۲: Benchmarking، Tracing و Debugging</summary>
 
 این بخش فاز ۳ را عملی و جدی می‌کند. اگر فقط تا هفته ۷ بخوانی ولی benchmark و tracing انجام ندهی، فهمت ناقص می‌ماند.
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۷-linux-limits،-kernel-tuning-و-observability) · [بعدی →](#هفته-۸-benchmarking-پایه)
-
-</div>
-
-
----
-
 # هفته ۸: Benchmarking پایه
-
-<details>
-<summary>هفته ۸: Benchmarking پایه</summary>
 
 ## ابزارهای پیشنهادی
 
@@ -2186,22 +1963,7 @@ wrk -t4 -c100 -d30s https://localhost/
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۸-تا-۱۲-benchmarking،-tracing-و-debugging) · [بعدی →](#هفته-۹-latency-و-percentileها)
-
-</div>
-
-
----
-
 # هفته ۹: Latency و Percentileها
-
-<details>
-<summary>هفته ۹: Latency و Percentileها</summary>
 
 Average کافی نیست.
 
@@ -2247,22 +2009,7 @@ Latency Distribution
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۸-benchmarking-پایه) · [بعدی →](#هفته-۱۰-strace-و-tcpdump-در-debug-واقعی)
-
-</div>
-
-
----
-
 # هفته ۱۰: strace و tcpdump در Debug واقعی
-
-<details>
-<summary>هفته ۱۰: strace و tcpdump در Debug واقعی</summary>
 
 ## سناریو ۱: 502
 
@@ -2336,22 +2083,7 @@ buffering و sendfile را بررسی کن.
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۹-latency-و-percentileها) · [بعدی →](#هفته-۱۱-perf-و-cpu-profiling)
-
-</div>
-
-
----
-
 # هفته ۱۱: perf و CPU Profiling
-
-<details>
-<summary>هفته ۱۱: perf و CPU Profiling</summary>
 
 اگر CPU bottleneck داری، باید بتوانی ببینی CPU کجا مصرف می‌شود.
 
@@ -2386,22 +2118,7 @@ sudo perf report
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۱۰-strace-و-tcpdump-در-debug-واقعی) · [بعدی →](#هفته-۱۲-پروژه-نهایی-فاز-۳)
-
-</div>
-
-
----
-
 # هفته ۱۲: پروژه نهایی فاز ۳
-
-<details>
-<summary>هفته ۱۲: پروژه نهایی فاز ۳</summary>
 
 ## معماری lab نهایی
 
@@ -2423,22 +2140,7 @@ Nginx
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۱۱-perf-و-cpu-profiling) · [بعدی →](#config-نمونه-lab-فاز-۳)
-
-</div>
-
-
----
-
 # Config نمونه lab فاز ۳
-
-<details>
-<summary>Config نمونه lab فاز ۳</summary>
 
 ```nginx id="hqqps3"
 worker_processes auto;
@@ -2525,22 +2227,7 @@ http {
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#هفته-۱۲-پروژه-نهایی-فاز-۳) · [بعدی →](#تستهای-نهایی-فاز-۳)
-
-</div>
-
-
----
-
 # تست‌های نهایی فاز ۳
-
-<details>
-<summary>تست‌های نهایی فاز ۳</summary>
 
 ## ۱. تست processها
 
@@ -2651,22 +2338,7 @@ Observed syscalls:
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#config-نمونه-lab-فاز-۳) · [بعدی →](#checklist-فاز-۳)
-
-</div>
-
-
----
-
 # Checklist فاز ۳
-
-<details>
-<summary>Checklist فاز ۳</summary>
 
 در پایان فاز ۳ باید بتوانی این‌ها را انجام بدهی:
 
@@ -2704,22 +2376,7 @@ Observed syscalls:
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#تستهای-نهایی-فاز-۳) · [بعدی →](#سؤالهایی-که-باید-بتوانی-جواب-بدهی)
-
-</div>
-
-
----
-
 # سؤال‌هایی که باید بتوانی جواب بدهی
-
-<details>
-<summary>سؤال‌هایی که باید بتوانی جواب بدهی</summary>
 
 ## Process و Worker
 
@@ -2784,43 +2441,15 @@ Observed syscalls:
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#checklist-فاز-۳) · [بعدی →](#گزارش-نهایی-فاز-۳)
-
-</div>
-
-
----
-
 # گزارش نهایی فاز ۳
-
-<details>
-<summary>گزارش نهایی فاز ۳</summary>
 
 در پایان فاز ۳ یک فایل Markdown بساز:
 
 ```md id="94b79k"
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#سؤالهایی-که-باید-بتوانی-جواب-بدهی) · [بعدی →](#nginx-phase-3-systems-report)
-
-</div>
-
-
 ---
 
 # Nginx Phase 3 Systems Report
-
-<details>
-<summary>Nginx Phase 3 Systems Report</summary>
 
 ## 1. Lab Architecture
 
@@ -2969,22 +2598,7 @@ Write 20 lessons.
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#گزارش-نهایی-فاز-۳) · [بعدی →](#معیار-موفقیت-فاز-۳)
-
-</div>
-
-
----
-
 # معیار موفقیت فاز ۳
-
-<details>
-<summary>معیار موفقیت فاز ۳</summary>
 
 فاز ۳ را وقتی تمام کرده‌ای که بتوانی این سناریوها را debug کنی:
 
@@ -3003,22 +2617,7 @@ Write 20 lessons.
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#nginx-phase-3-systems-report) · [بعدی →](#منابع-پیشنهادی-فاز-۳)
-
-</div>
-
-
----
-
 # منابع پیشنهادی فاز ۳
-
-<details>
-<summary>منابع پیشنهادی فاز ۳</summary>
 
 ## Linux و سیستم‌عامل
 
@@ -3056,22 +2655,7 @@ Write 20 lessons.
 
 ---
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#معیار-موفقیت-فاز-۳) · [بعدی →](#توصیه-جدی-برای-فاز-۳)
-
-</div>
-
-
----
-
 # توصیه جدی برای فاز ۳
-
-<details>
-<summary>توصیه جدی برای فاز ۳</summary>
 
 این فاز را فقط با خواندن جلو نبر. اگر دستت به ابزارها نخورد، این مفاهیم در ذهنت واقعی نمی‌شوند.
 
@@ -3113,14 +2697,4 @@ Explain why worker does not block
 
 اگر این روش را جدی انجام بدهی، Nginx برایت از یک config file تبدیل می‌شود به یک سیستم واقعی که می‌توانی رفتار آن را از سطح HTTP تا kernel توضیح بدهی.
 
-</details>
-
-
-<div align="center">
-
-[↑ بالا](#فاز-۳-شبکه-و-سیستمعامل-برای-فهم-عمیق-nginx) · [← قبلی](#منابع-پیشنهادی-فاز-۳)
-
-</div>
-
-
-</div>
+---
