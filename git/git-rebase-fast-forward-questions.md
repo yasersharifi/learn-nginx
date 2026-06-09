@@ -1,15 +1,15 @@
+<div dir="rtl" style="background-color: #FFE3E3;padding: 8px;color: #EC6530;font-size:16px;font-weight: 600;border-radius:8px;">
+     <ul>
+          <li>git pull یعنی fetch + ترکیب تغییرات remote با local.</li>
+          <li>اگر local فقط عقب باشد، fast-forward انجام می‌شود.</li>
+          <li>اگر local و remote هر دو commit جدید داشته باشند، branchها divergent شده‌اند.</li>
+          <li>در divergent branches باید بین merge و rebase انتخاب کنیم.</li>
+          <li>merge تاریخچه واقعی را حفظ می‌کند ولی ممکن است history را شلوغ کند.</li>
+          <li>rebase history را خطی و تمیز می‌کند ولی commitها را بازنویسی می‌کند.</li>
+          <li>ff-only فقط fast-forward را قبول می‌کند و در حالت divergent خطا می‌دهد.</li>
+     </ul>
 
-```txt
-git pull یعنی fetch + ترکیب تغییرات remote با local.
-
-اگر local فقط عقب باشد، fast-forward انجام می‌شود.
-اگر local و remote هر دو commit جدید داشته باشند، branchها divergent شده‌اند.
-در divergent branches باید بین merge و rebase انتخاب کنیم.
-
-merge تاریخچه واقعی را حفظ می‌کند ولی ممکن است history را شلوغ کند.
-rebase history را خطی و تمیز می‌کند ولی commitها را بازنویسی می‌کند.
-ff-only فقط fast-forward را قبول می‌کند و در حالت divergent خطا می‌دهد.
-```
+</div>
 
 ### جدول مقایسه‌ای
 
@@ -48,9 +48,7 @@ git push --force-with-lease
 
 ---
 
-
-
-#  سؤال های سناریومحور Git Pull، Fast-Forward، Merge و Rebase با جواب
+# سؤال های سناریومحور Git Pull، Fast-Forward، Merge و Rebase با جواب
 
 ---
 
@@ -568,5 +566,5 @@ branch مشترک -> merge
 ```
 
 ```
-```
 
+```
