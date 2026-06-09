@@ -382,12 +382,13 @@
     <p>یعنی commit جدیدی ساخته نمی‌شود و فقط pointer branch جلو می‌رود.</p>
 <pre>قبل:
 
-local:  A---B
+local: A---B
 remote: A---B---C
 
 بعد:
 
-local:  A---B---C</pre>
+local: A---B---C</pre>
+
   </div>
 </div>
 
@@ -727,5 +728,6 @@ git rebase origin/main</pre>
   </div>
 </div>
 
+</div>
 </div>
 </div>
