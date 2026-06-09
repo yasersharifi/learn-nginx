@@ -36,6 +36,8 @@ jobs:
         run: |
           python3 scripts/prepare-mdbook.py
           mdbook build
+          mkdir -p book/theme/fonts
+          cp -f theme/fonts/*.woff2 book/theme/fonts/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

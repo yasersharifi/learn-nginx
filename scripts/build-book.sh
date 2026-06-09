@@ -6,6 +6,8 @@ MDBOOK="${ROOT}/.bin/mdbook"
 cd "$ROOT"
 python3 scripts/prepare-mdbook.py
 "$MDBOOK" build
+mkdir -p book/theme/fonts
+cp -f theme/fonts/*.woff2 book/theme/fonts/
 
 echo ""
 echo "Book built → ${ROOT}/book/index.html"

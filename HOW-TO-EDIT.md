@@ -100,6 +100,18 @@ python3 scripts/prepare-mdbook.py
 
 ---
 
+## فونت‌ها
+
+| کاربرد | فونت |
+| --- | --- |
+| متن فارسی | **Vazir** |
+| متن انگلیسی (مثلاً grep) | **Inter** |
+| کد | **JetBrains Mono** |
+
+فایل‌ها در `theme/fonts/`. تنظیمات: `theme/fonts.css` و `theme/custom.css`.
+
+---
+
 ## چک‌لیست قبل از commit
 
 - [ ] تغییرات فقط در `content/`، `assets/`، `theme/`، `scripts/`، `book.toml`، `README.md`
