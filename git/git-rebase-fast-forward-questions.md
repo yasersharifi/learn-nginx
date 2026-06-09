@@ -57,26 +57,26 @@ git push --force-with-lease
 
 | # | سناریو |
 | ---: | --- |
-| 1 | [لوکال فقط عقب است](#user-content-1-سناریو-لوکال-فقط-عقب-است) |
-| 2 | [انتخاب بهترین update](#user-content-2-سناریو-انتخاب-بهترین-update) |
-| 3 | [local و remote هر دو تغییر دارند](#user-content-3-سناریو-local-و-remote-هر-دو-تغییر-دارند) |
-| 4 | [branch شخصی برای Pull Request](#user-content-4-سناریو-branch-شخصی-برای-pull-request) |
-| 5 | [branch مشترک تیمی](#user-content-5-سناریو-branch-مشترک-تیمی) |
-| 6 | [فقط fast-forward مجاز باشد](#user-content-6-سناریو-فقط-fast-forward-مجاز-باشد) |
-| 7 | [تنظیم دائمی fast-forward only](#user-content-7-سناریو-تنظیم-دائمی-fast-forward-only) |
-| 8 | [خطای divergent branches](#user-content-8-سناریو-خطای-divergent-branches) |
-| 9 | [push بعد از rebase reject می‌شود](#user-content-9-سناریو-push-بعد-از-rebase-reject-میشود) |
-| 10 | [push امن بعد از rebase](#user-content-10-سناریو-push-امن-بعد-از-rebase) |
-| 11 | [conflict وسط rebase](#user-content-11-سناریو-conflict-وسط-rebase) |
-| 12 | [لغو کامل rebase](#user-content-12-سناریو-لغو-کامل-rebase) |
-| 13 | [pull همیشه با rebase باشد](#user-content-13-سناریو-pull-همیشه-با-rebase-باشد) |
-| 14 | [تیم history واقعی mergeها را می‌خواهد](#user-content-14-سناریو-تیم-history-واقعی-mergeها-را-میخواهد) |
-| 15 | [نتیجه merge](#user-content-15-سناریو-نتیجه-merge) |
-| 16 | [نتیجه rebase](#user-content-16-سناریو-نتیجه-rebase) |
-| 17 | [تغییر hash بعد از rebase](#user-content-17-سناریو-تغییر-hash-بعد-از-rebase) |
-| 18 | [گرفتن remote بدون ترکیب](#user-content-18-سناریو-گرفتن-remote-بدون-ترکیب) |
-| 19 | [rebase دستی روی origin/main](#user-content-19-سناریو-rebase-دستی-روی-originmain) |
-| 20 | [توصیه اشتباه درباره rebase](#user-content-20-سناریو-توصیه-اشتباه-درباره-rebase) |
+| 1 | [لوکال فقط عقب است](#1-سناریو-لوکال-فقط-عقب-است) |
+| 2 | [انتخاب بهترین update](#2-سناریو-انتخاب-بهترین-update) |
+| 3 | [local و remote هر دو تغییر دارند](#3-سناریو-local-و-remote-هر-دو-تغییر-دارند) |
+| 4 | [branch شخصی برای Pull Request](#4-سناریو-branch-شخصی-برای-pull-request) |
+| 5 | [branch مشترک تیمی](#5-سناریو-branch-مشترک-تیمی) |
+| 6 | [فقط fast-forward مجاز باشد](#6-سناریو-فقط-fast-forward-مجاز-باشد) |
+| 7 | [تنظیم دائمی fast-forward only](#7-سناریو-تنظیم-دائمی-fast-forward-only) |
+| 8 | [خطای divergent branches](#8-سناریو-خطای-divergent-branches) |
+| 9 | [push بعد از rebase reject می‌شود](#9-سناریو-push-بعد-از-rebase-reject-میشود) |
+| 10 | [push امن بعد از rebase](#10-سناریو-push-امن-بعد-از-rebase) |
+| 11 | [conflict وسط rebase](#11-سناریو-conflict-وسط-rebase) |
+| 12 | [لغو کامل rebase](#12-سناریو-لغو-کامل-rebase) |
+| 13 | [pull همیشه با rebase باشد](#13-سناریو-pull-همیشه-با-rebase-باشد) |
+| 14 | [تیم history واقعی mergeها را می‌خواهد](#14-سناریو-تیم-history-واقعی-mergeها-را-میخواهد) |
+| 15 | [نتیجه merge](#15-سناریو-نتیجه-merge) |
+| 16 | [نتیجه rebase](#16-سناریو-نتیجه-rebase) |
+| 17 | [تغییر hash بعد از rebase](#17-سناریو-تغییر-hash-بعد-از-rebase) |
+| 18 | [گرفتن remote بدون ترکیب](#18-سناریو-گرفتن-remote-بدون-ترکیب) |
+| 19 | [rebase دستی روی origin/main](#19-سناریو-rebase-دستی-روی-originmain) |
+| 20 | [توصیه اشتباه درباره rebase](#20-سناریو-توصیه-اشتباه-درباره-rebase) |
 
 ---
 
