@@ -1,6 +1,6 @@
 /**
- * Vazir (Persian) · Inter (English) · JetBrains Mono (code)
- * RTL prose · LTR code blocks
+ * فارسی (RTL) · Vazir · Inter · JetBrains Mono
+ * کد همیشه LTR
  */
 
 @font-face {
@@ -58,19 +58,22 @@
 }
 
 :root {
-  --fa-font: 'Vazir', Tahoma, Arial, sans-serif;
+  --fa-font: 'Vazir', Tahoma, 'Segoe UI', sans-serif;
   --en-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --mono-font: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
   --ifm-font-family-base: var(--fa-font);
   --ifm-heading-font-family: var(--fa-font);
   --ifm-font-family-monospace: var(--mono-font);
   --ifm-code-font-size: 90%;
-  --ifm-line-height-base: 1.85;
+  --ifm-line-height-base: 1.9;
   --ifm-h1-font-size: 2rem;
-  --ifm-h2-font-size: 1.5rem;
+  --ifm-h2-font-size: 1.55rem;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-global-spacing: 1.1rem;
+  --ifm-leading: 1.9;
 }
 
-html {
+html[dir='rtl'] {
   direction: rtl;
 }
 
@@ -80,46 +83,153 @@ html[data-theme='dark'] {
 
 body {
   font-family: var(--fa-font);
+  text-align: right;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Navbar / footer UI */
+/* ─── Navbar ─── */
 .navbar__title,
 .navbar__link,
-.footer,
-.menu__link,
-.pagination-nav__label,
-.table-of-contents__link {
+.footer__title,
+.footer__link,
+.footer__copyright {
   font-family: var(--fa-font);
 }
 
-/* English chapter */
-article.en-doc,
-.en-doc {
-  direction: ltr;
-  text-align: left;
-  font-family: var(--en-font);
-  line-height: 1.75;
+html[dir='rtl'] .navbar__inner {
+  flex-direction: row-reverse;
 }
 
-article.en-doc h1,
-article.en-doc h2,
-article.en-doc h3,
-article.en-doc h4,
-.en-doc h1,
-.en-doc h2,
-.en-doc h3,
-.en-doc h4 {
-  font-family: var(--en-font);
+html[dir='rtl'] .navbar__items--right {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+html[dir='rtl'] .navbar__items--left {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* ─── Doc layout ─── */
+html[dir='rtl'] .theme-doc-markdown {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .markdown h1,
+html[dir='rtl'] .markdown h2,
+html[dir='rtl'] .markdown h3,
+html[dir='rtl'] .markdown h4,
+html[dir='rtl'] .markdown h5,
+html[dir='rtl'] .markdown h6 {
+  font-family: var(--fa-font);
+  font-weight: 700;
+  text-align: right;
+}
+
+html[dir='rtl'] .markdown p,
+html[dir='rtl'] .markdown li,
+html[dir='rtl'] .markdown ol,
+html[dir='rtl'] .markdown ul {
+  text-align: right;
+}
+
+html[dir='rtl'] .markdown blockquote {
+  direction: rtl;
+  text-align: right;
+  border-right: 4px solid var(--ifm-color-emphasis-300);
+  border-left: none;
+  padding-right: 1rem;
+  padding-left: 0;
+  margin-right: 0;
+}
+
+html[dir='rtl'] .theme-admonition {
+  direction: rtl;
+  text-align: right;
+  border-right: 4px solid;
+  border-left: none;
+}
+
+/* ─── Sidebar ─── */
+html[dir='rtl'] .theme-doc-sidebar-container {
+  border-left: 1px solid var(--ifm-toc-border-color);
+  border-right: none;
+}
+
+html[dir='rtl'] .menu__link {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--fa-font);
+}
+
+html[dir='rtl'] .menu__list-item-collapsible .menu__link {
+  padding-right: var(--ifm-menu-link-padding-horizontal);
+}
+
+html[dir='rtl'] .menu__caret {
+  transform: scaleX(-1);
+}
+
+html[dir='rtl'] .menu__link--sublist-caret::after {
+  transform: scaleX(-1);
+}
+
+/* ─── TOC (فهرست همین صفحه) ─── */
+html[dir='rtl'] .table-of-contents {
+  direction: rtl;
+  text-align: right;
+  border-left: 1px solid var(--ifm-toc-border-color);
+  border-right: none;
+  padding-left: 0.75rem;
+  padding-right: 0;
+}
+
+html[dir='rtl'] .table-of-contents__link {
+  font-family: var(--fa-font);
+}
+
+html[dir='rtl'] .table-of-contents__link--active {
   font-weight: 600;
 }
 
-/* Code — always LTR */
+html[dir='rtl'] .theme-doc-toc-desktop {
+  order: -1;
+}
+
+/* ─── Pagination ─── */
+html[dir='rtl'] .pagination-nav {
+  direction: rtl;
+}
+
+html[dir='rtl'] .pagination-nav__link {
+  text-align: right;
+  font-family: var(--fa-font);
+}
+
+html[dir='rtl'] .pagination-nav__sublabel {
+  text-align: right;
+}
+
+/* ─── Tables ─── */
+html[dir='rtl'] .markdown table {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .markdown th,
+html[dir='rtl'] .markdown td {
+  text-align: right;
+}
+
+/* ─── Code (همیشه LTR) ─── */
 pre,
 code,
 .prism-code,
 .theme-code-block,
-.token-line {
+.token-line,
+.markdown code {
   direction: ltr !important;
   text-align: left !important;
   unicode-bidi: isolate;
@@ -130,42 +240,111 @@ code,
   border-radius: 8px;
 }
 
-/* TOC on RTL pages */
-.table-of-contents {
-  direction: rtl;
-  text-align: right;
+html[dir='rtl'] .theme-doc-markdown :not(pre) > code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.markdown table code {
+  direction: ltr !important;
+}
+
+/* ─── English chapter (grep) ─── */
+article.en-doc,
+html[dir='rtl'] article.en-doc {
+  direction: ltr;
+  text-align: left;
+  font-family: var(--en-font);
+  line-height: 1.75;
+}
+
+article.en-doc h1,
+article.en-doc h2,
+article.en-doc h3,
+article.en-doc h4 {
+  font-family: var(--en-font);
+  font-weight: 600;
+  text-align: left;
+}
+
+article.en-doc p,
+article.en-doc li {
+  text-align: left;
 }
 
 article.en-doc .table-of-contents {
   direction: ltr;
   text-align: left;
+  border-right: none;
+  border-left: 1px solid var(--ifm-toc-border-color);
+  padding-right: 0;
+  padding-left: 0.75rem;
 }
 
-/* Sidebar */
-.theme-doc-sidebar-menu .menu__link {
-  direction: rtl;
-  text-align: right;
-}
-
-/* Pagination */
-.pagination-nav {
-  direction: rtl;
-}
-
-article.en-doc ~ .pagination-nav,
-.pagination-nav--en {
+article.en-doc blockquote {
   direction: ltr;
-}
-
-/* Tables */
-.markdown table {
-  direction: rtl;
+  text-align: left;
+  border-left: 4px solid var(--ifm-color-emphasis-300);
+  border-right: none;
+  padding-left: 1rem;
+  padding-right: 0;
 }
 
 article.en-doc table {
   direction: ltr;
+  text-align: left;
 }
 
-.markdown table code {
-  direction: ltr;
+article.en-doc table th,
+article.en-doc table td {
+  text-align: left;
+}
+
+/* ─── Search ─── */
+html[dir='rtl'] .DocSearch-Button {
+  direction: rtl;
+}
+
+html[dir='rtl'] .navbar__search-input {
+  text-align: right;
+}
+
+/* ─── Breadcrumbs ─── */
+html[dir='rtl'] .breadcrumbs__item:not(:last-child)::after {
+  transform: scaleX(-1);
+}
+
+/* ─── Doc item wrapper ─── */
+html[dir='rtl'] .theme-doc-version-badge,
+html[dir='rtl'] .theme-edit-this-page {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .theme-doc-footer {
+  direction: rtl;
+}
+
+/* ─── Lists ─── */
+html[dir='rtl'] .markdown ul,
+html[dir='rtl'] .markdown ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+html[dir='rtl'] .markdown li > ul,
+html[dir='rtl'] .markdown li > ol {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+/* ─── Mobile sidebar ─── */
+html[dir='rtl'] .navbar-sidebar {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] .navbar-sidebar__back {
+  direction: rtl;
 }

@@ -18,6 +18,13 @@ const config: Config = {
   i18n: {
     defaultLocale: 'fa',
     locales: ['fa'],
+    localeConfigs: {
+      fa: {
+        label: 'فارسی',
+        direction: 'rtl',
+        htmlLang: 'fa-IR',
+      },
+    },
   },
 
   presets: [

@@ -62,13 +62,20 @@ className: en-doc
 
 ---
 
-## فونت‌ها
+## فارسی (RTL)
 
-| کاربرد | فونت |
-| --- | --- |
-| فارسی | Vazir |
-| انگلیسی | Inter |
-| کد | JetBrains Mono |
+سایت با `locale: fa` و `direction: rtl` تنظیم شده:
+
+- `html lang="fa-IR" dir="rtl"`
+- برچسب‌های UI فارسی (قبلی / بعدی / کپی / …)
+- فونت **Vazir** برای متن فارسی
+- sidebar سمت راست، TOC سمت چپ
+- کد همیشه LTR
+
+تنظیمات: `docusaurus.config.ts` → `i18n.localeConfigs.fa`  
+استایل: `src/css/custom.css`
+
+صفحه انگلیسی: front matter `className: en-doc`
 
 ---
 
