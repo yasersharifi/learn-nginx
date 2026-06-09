@@ -1,0 +1,10 @@
+{
+  "label": "خط فرمان",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Linux برای توسعه‌دهنده",
+    "description": "مسیرها، فایل، log، سرویس، شبکه و deploy."
+  },
+  "collapsed": true
+}

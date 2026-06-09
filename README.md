@@ -1,22 +1,17 @@
-# مسیر یادگیری Nginx
+# زیرساخت عملی وب
 
-یادداشت‌های شخصی برای یادگیری Nginx، Linux و Git.
-
-| # | فصل |
-| ---: | --- |
-| 1 | [مقدمه](content/introduction.md) |
-| 2 | [فاز ۱: Nginx](content/nginx/phase1.md) |
-| 3 | [فاز ۲: Production](content/nginx/phase2.md) |
-| 4 | [فاز ۳: شبکه و OS](content/nginx/phase3-network.md) |
-| 5 | [Linux](content/linux/linux.md) |
-| 6 | [grep](content/linux/grep.md) |
-| 7 | [Git Pull / Rebase](content/git/rebase-fast-forward.md) |
-| 8 | [HEAD در Git](content/git/head-guide.md) |
-| 9 | [سؤالات Git](content/git/rebase-questions.md) |
-
-## سایت (Docusaurus + TypeScript)
+راهنمای Nginx، Linux و Git برای توسعه‌دهنده — هر درس یک صفحه، مثل کتاب.
 
 **آنلاین:** https://yasersharifi.github.io/learn-nginx/
+
+| بخش | فصل‌ها |
+| --- | --- |
+| [پیش‌گفتار](content/introduction.md) · [مرور](content/review.md) | |
+| Nginx | [پایه عملی](content/nginx/01-basics/) · [Production](content/nginx/02-production/) · [شبکه و OS](content/nginx/03-systems/) |
+| Linux | [خط فرمان](content/linux/01-shell/) · [grep](content/linux/02-grep/) |
+| Git | [Pull/Merge](content/git/01-pull-merge/) · [HEAD](content/git/02-head/) · [سناریوها](content/git/03-scenarios/) |
+
+## اجرای محلی
 
 ```bash
 npm install

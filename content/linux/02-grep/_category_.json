@@ -1,0 +1,10 @@
+{
+  "label": "grep",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "grep",
+    "description": "جستجوی متن در فایل، log و pipe."
+  },
+  "collapsed": true
+}

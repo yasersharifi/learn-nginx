@@ -1,350 +1,214 @@
 /**
- * فارسی (RTL) · Vazir · Inter · JetBrains Mono
- * کد همیشه LTR
+ * Theme: زیرساخت عملی وب — readable book layout
+ * Do NOT set direction/text-align for RTL here (rtlcss flips custom CSS).
  */
 
 @font-face {
-  font-family: 'Vazir';
-  src: url('@site/static/fonts/Vazir-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: "Vazir";
+	src: url("@site/static/fonts/Vazir-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Vazir';
-  src: url('@site/static/fonts/Vazir-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+	font-family: "Vazir";
+	src: url("@site/static/fonts/Vazir-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Vazir';
-  src: url('@site/static/fonts/Vazir-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+	font-family: "Vazir";
+	src: url("@site/static/fonts/Vazir-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('@site/static/fonts/Inter-latin.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-    U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: "Inter";
+	src: url("@site/static/fonts/Inter-latin.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+		U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+		U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('@site/static/fonts/Inter-latin-600.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-    U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url('@site/static/fonts/JetBrainsMono.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: "JetBrains Mono";
+	src: url("@site/static/fonts/JetBrainsMono.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 :root {
-  --fa-font: 'Vazir', Tahoma, 'Segoe UI', sans-serif;
-  --en-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  --mono-font: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-  --ifm-font-family-base: var(--fa-font);
-  --ifm-heading-font-family: var(--fa-font);
-  --ifm-font-family-monospace: var(--mono-font);
-  --ifm-code-font-size: 90%;
-  --ifm-line-height-base: 1.9;
-  --ifm-h1-font-size: 2rem;
-  --ifm-h2-font-size: 1.55rem;
-  --ifm-h3-font-size: 1.25rem;
-  --ifm-global-spacing: 1.1rem;
-  --ifm-leading: 1.9;
+	--fa-font: "Vazir", Tahoma, sans-serif;
+	--mono-font: "JetBrains Mono", ui-monospace, monospace;
+
+	--ifm-color-primary: #0d6e6e;
+	--ifm-color-primary-dark: #0a5858;
+	--ifm-color-primary-darker: #094f4f;
+	--ifm-color-primary-darkest: #074141;
+	--ifm-color-primary-light: #108888;
+	--ifm-color-primary-lighter: #129494;
+	--ifm-color-primary-lightest: #16adad;
+
+	--ifm-font-family-base: var(--fa-font);
+	--ifm-heading-font-family: var(--fa-font);
+	--ifm-font-family-monospace: var(--mono-font);
+	--ifm-code-font-size: 88%;
+	--ifm-line-height-base: 1.85;
+	--ifm-heading-font-weight: 700;
+	--ifm-global-radius: 0.5rem;
+
+	--book-reading-width: 46rem;
+
+	/* Blockquotes — book-style callouts */
+	--book-blockquote-bg: rgba(13, 110, 110, 0.06);
+	--book-blockquote-border: var(--ifm-color-primary);
+	--book-blockquote-accent: rgba(13, 110, 110, 0.12);
 }
 
-html[dir='rtl'] {
-  direction: rtl;
-}
+[data-theme="dark"] {
+	--ifm-color-primary: #3dbdb8;
+	--ifm-color-primary-dark: #2fa9a4;
+	--ifm-background-color: #141820;
+	--ifm-background-surface-color: #1a2030;
 
-html[data-theme='dark'] {
-  --ifm-background-color: #1b1b1d;
+	--book-blockquote-bg: rgba(61, 189, 184, 0.08);
+	--book-blockquote-accent: rgba(61, 189, 184, 0.14);
 }
 
 body {
-  font-family: var(--fa-font);
-  text-align: right;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
-/* ─── Navbar ─── */
-.navbar__title,
-.navbar__link,
-.footer__title,
-.footer__link,
-.footer__copyright {
-  font-family: var(--fa-font);
+.theme-doc-markdown.markdown {
+	max-width: var(--book-reading-width);
 }
 
-html[dir='rtl'] .navbar__inner {
-  flex-direction: row-reverse;
+.generated-index-page .title {
+	font-size: 2rem;
+	font-weight: 700;
 }
 
-html[dir='rtl'] .navbar__items--right {
-  margin-right: auto;
-  margin-left: 0;
+.menu__link {
+	font-size: 0.92rem;
 }
 
-html[dir='rtl'] .navbar__items--left {
-  margin-left: auto;
-  margin-right: 0;
+.menu__list-item-collapsible .menu__link {
+	font-weight: 600;
+	color: var(--ifm-color-primary);
 }
 
-/* ─── Doc layout ─── */
-html[dir='rtl'] .theme-doc-markdown {
-  direction: rtl;
-  text-align: right;
+.markdown table {
+	font-size: 0.92rem;
 }
 
-html[dir='rtl'] .markdown h1,
-html[dir='rtl'] .markdown h2,
-html[dir='rtl'] .markdown h3,
-html[dir='rtl'] .markdown h4,
-html[dir='rtl'] .markdown h5,
-html[dir='rtl'] .markdown h6 {
-  font-family: var(--fa-font);
-  font-weight: 700;
-  text-align: right;
+.markdown th {
+	background: var(--ifm-color-emphasis-100);
 }
 
-html[dir='rtl'] .markdown p,
-html[dir='rtl'] .markdown li,
-html[dir='rtl'] .markdown ol,
-html[dir='rtl'] .markdown ul {
-  text-align: right;
+/* Blockquotes — teal accent, soft panel, RTL-safe (logical properties) */
+.markdown blockquote {
+	position: relative;
+	margin: 1.25rem 0;
+	padding: 1rem 1.25rem;
+	border: none;
+	border-inline-start: 4px solid var(--book-blockquote-border);
+	border-radius: 0 var(--ifm-global-radius) var(--ifm-global-radius) 0;
+	background: linear-gradient(
+		90deg,
+		var(--book-blockquote-bg) 0%,
+		var(--ifm-background-surface-color) 100%
+	);
+	color: var(--ifm-color-emphasis-800);
+	box-shadow: none;
+	font-size: 0.97em;
+	line-height: 1.75;
 }
 
-html[dir='rtl'] .markdown blockquote {
-  direction: rtl;
-  text-align: right;
-  border-right: 4px solid var(--ifm-color-emphasis-300);
-  border-left: none;
-  padding-right: 1rem;
-  padding-left: 0;
-  margin-right: 0;
+.markdown blockquote::before {
+	content: "“";
+	position: absolute;
+	inset-block-start: -0.15rem;
+	inset-inline-start: 0.65rem;
+	font-size: 2.5rem;
+	line-height: 1;
+	font-weight: 700;
+	color: var(--book-blockquote-accent);
+	font-family: Georgia, "Times New Roman", serif;
+	pointer-events: none;
+	user-select: none;
 }
 
-html[dir='rtl'] .theme-admonition {
-  direction: rtl;
-  text-align: right;
-  border-right: 4px solid;
-  border-left: none;
+.markdown blockquote > :first-child {
+	margin-block-start: 0;
 }
 
-/* ─── Sidebar ─── */
-html[dir='rtl'] .theme-doc-sidebar-container {
-  border-left: 1px solid var(--ifm-toc-border-color);
-  border-right: none;
+.markdown blockquote > :last-child {
+	margin-block-end: 0;
 }
 
-html[dir='rtl'] .menu__link {
-  direction: rtl;
-  text-align: right;
-  font-family: var(--fa-font);
+.markdown blockquote p {
+	color: inherit;
 }
 
-html[dir='rtl'] .menu__list-item-collapsible .menu__link {
-  padding-right: var(--ifm-menu-link-padding-horizontal);
+.markdown blockquote strong {
+	color: var(--ifm-color-emphasis-900);
 }
 
-html[dir='rtl'] .menu__caret {
-  transform: scaleX(-1);
+.markdown blockquote code {
+	background: var(--ifm-color-emphasis-100);
+	border-color: transparent;
 }
 
-html[dir='rtl'] .menu__link--sublist-caret::after {
-  transform: scaleX(-1);
+.markdown blockquote a {
+	color: var(--ifm-color-primary-dark);
+	text-decoration-color: var(--book-blockquote-accent);
 }
 
-/* ─── TOC (فهرست همین صفحه) ─── */
-html[dir='rtl'] .table-of-contents {
-  direction: rtl;
-  text-align: right;
-  border-left: 1px solid var(--ifm-toc-border-color);
-  border-right: none;
-  padding-left: 0.75rem;
-  padding-right: 0;
+.markdown blockquote a:hover {
+	color: var(--ifm-color-primary-darker);
 }
 
-html[dir='rtl'] .table-of-contents__link {
-  font-family: var(--fa-font);
+.markdown :not(pre) > code {
+	font-family: var(--mono-font) !important;
+	font-size: 0.88em;
+	padding: 0.12em 0.35em;
+	border-radius: 0.25rem;
 }
 
-html[dir='rtl'] .table-of-contents__link--active {
-  font-weight: 600;
+div[class*="codeBlockContainer"] {
+	border: 1px solid var(--ifm-color-emphasis-200);
+	box-shadow: none;
 }
 
-html[dir='rtl'] .theme-doc-toc-desktop {
-  order: -1;
+.navbar {
+	border-bottom: 1px solid var(--ifm-color-emphasis-200);
+	box-shadow: none;
 }
 
-/* ─── Pagination ─── */
-html[dir='rtl'] .pagination-nav {
-  direction: rtl;
+.navbar__title {
+	font-weight: 700;
+	letter-spacing: -0.02em;
 }
 
-html[dir='rtl'] .pagination-nav__link {
-  text-align: right;
-  font-family: var(--fa-font);
+.footer--dark {
+	background: linear-gradient(180deg, #1a2030 0%, #12161f 100%);
 }
 
-html[dir='rtl'] .pagination-nav__sublabel {
-  text-align: right;
+.pagination-nav__link {
+	border-radius: var(--ifm-global-radius);
+	transition: border-color 0.15s ease;
 }
 
-/* ─── Tables ─── */
-html[dir='rtl'] .markdown table {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir='rtl'] .markdown th,
-html[dir='rtl'] .markdown td {
-  text-align: right;
-}
-
-/* ─── Code (همیشه LTR) ─── */
-pre,
-code,
-.prism-code,
-.theme-code-block,
-.token-line,
-.markdown code {
-  direction: ltr !important;
-  text-align: left !important;
-  unicode-bidi: isolate;
-  font-family: var(--mono-font) !important;
-}
-
-.theme-doc-markdown pre {
-  border-radius: 8px;
-}
-
-html[dir='rtl'] .theme-doc-markdown :not(pre) > code {
-  direction: ltr;
-  unicode-bidi: isolate;
-  display: inline-block;
-}
-
-.markdown table code {
-  direction: ltr !important;
-}
-
-/* ─── English chapter (grep) ─── */
-article.en-doc,
-html[dir='rtl'] article.en-doc {
-  direction: ltr;
-  text-align: left;
-  font-family: var(--en-font);
-  line-height: 1.75;
-}
-
-article.en-doc h1,
-article.en-doc h2,
-article.en-doc h3,
-article.en-doc h4 {
-  font-family: var(--en-font);
-  font-weight: 600;
-  text-align: left;
-}
-
-article.en-doc p,
-article.en-doc li {
-  text-align: left;
-}
-
-article.en-doc .table-of-contents {
-  direction: ltr;
-  text-align: left;
-  border-right: none;
-  border-left: 1px solid var(--ifm-toc-border-color);
-  padding-right: 0;
-  padding-left: 0.75rem;
-}
-
-article.en-doc blockquote {
-  direction: ltr;
-  text-align: left;
-  border-left: 4px solid var(--ifm-color-emphasis-300);
-  border-right: none;
-  padding-left: 1rem;
-  padding-right: 0;
-}
-
-article.en-doc table {
-  direction: ltr;
-  text-align: left;
-}
-
-article.en-doc table th,
-article.en-doc table td {
-  text-align: left;
-}
-
-/* ─── Search ─── */
-html[dir='rtl'] .DocSearch-Button {
-  direction: rtl;
-}
-
-html[dir='rtl'] .navbar__search-input {
-  text-align: right;
-}
-
-/* ─── Breadcrumbs ─── */
-html[dir='rtl'] .breadcrumbs__item:not(:last-child)::after {
-  transform: scaleX(-1);
-}
-
-/* ─── Doc item wrapper ─── */
-html[dir='rtl'] .theme-doc-version-badge,
-html[dir='rtl'] .theme-edit-this-page {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir='rtl'] .theme-doc-footer {
-  direction: rtl;
-}
-
-/* ─── Lists ─── */
-html[dir='rtl'] .markdown ul,
-html[dir='rtl'] .markdown ol {
-  padding-right: 1.5rem;
-  padding-left: 0;
-}
-
-html[dir='rtl'] .markdown li > ul,
-html[dir='rtl'] .markdown li > ol {
-  margin-right: 1rem;
-  margin-left: 0;
-}
-
-/* ─── Mobile sidebar ─── */
-html[dir='rtl'] .navbar-sidebar {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir='rtl'] .navbar-sidebar__back {
-  direction: rtl;
+.pagination-nav__link:hover {
+	border-color: var(--ifm-color-primary);
 }

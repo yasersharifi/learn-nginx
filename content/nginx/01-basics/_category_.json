@@ -1,0 +1,10 @@
+{
+  "label": "فصل ۱ · پایه عملی",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "فصل ۱ · Nginx عملی",
+    "description": "نصب، static file، reverse proxy، load balancing و HTTPS — هر درس یک موضوع."
+  },
+  "collapsed": true
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Pull و Merge",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Git Pull، Merge و Rebase",
+    "description": "fast-forward، divergent branches و انتخاب روش درست."
+  },
+  "collapsed": true
+}

@@ -1,0 +1,10 @@
+{
+  "label": "فصل ۳ · شبکه و OS",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "فصل ۳ · شبکه و سیستم‌عامل",
+    "description": "TCP، epoll، TLS، benchmark — فهم عمیق Nginx."
+  },
+  "collapsed": true
+}

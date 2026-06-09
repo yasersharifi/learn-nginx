@@ -1,0 +1,10 @@
+{
+  "label": "فصل ۲ · Production",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "فصل ۲ · Production Operations",
+    "description": "timeout، cache، rate limit، observability و deploy امن."
+  },
+  "collapsed": true
+}

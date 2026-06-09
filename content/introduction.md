@@ -1,49 +1,41 @@
 ---
 slug: /
-title: مقدمه
+title: پیش‌گفتار
+description: زیرساخت عملی وب — راهنمای گام‌به‌گام Nginx، Linux و Git برای توسعه‌دهنده
 sidebar_position: 1
 ---
 
-# مسیر یادگیری Nginx
+# زیرساخت عملی وب
 
-یادداشت‌های شخصی برای یادگیری Nginx، Linux و Git — از نصب و reverse proxy تا شبکه و production.
+**راهنمای Nginx، Linux و Git برای توسعه‌دهنده**
 
-| # | فصل | زمان تقریبی |
-| ---: | --- | --- |
-| 1 | [فاز ۱: پایه عملی Nginx](nginx/phase1) | ۲–۳ هفته |
-| 2 | [فاز ۲: Production Operations](nginx/phase2) | ۴–۶ هفته |
-| 3 | [فاز ۳: شبکه و سیستم‌عامل](nginx/phase3-network) | ۲–۳ ماه |
-| 4 | [Linux برای توسعه‌دهنده](linux/) | — |
-| 5 | [grep](linux/grep) | — |
-| 6 | [Git Pull و Fast-Forward](git/rebase-fast-forward) | — |
-| 7 | [HEAD در Git](git/head-guide) | — |
-| 8 | [سؤالات Git (Pull / Rebase)](git/rebase-questions) | — |
+یادداشت‌های شخصی برای یادگیری زیرساخت سرور — از reverse proxy و production تا خط فرمان لینوکس و Git روزمره. هر صفحه فقط **یک موضوع کوچک** دارد تا مثل یک کتاب واقعی، قابل مرور و مرور مجدد باشد.
 
 ---
 
-## ساختار
+## این کتاب برای چه کسی است؟
 
-1. کانفیگ عملی و production
-2. معماری داخلی و moduleها
-3. شبکه، OS و performance
+برای توسعه‌دهنده‌ای که فرانت و بک می‌زند، گاهی روی سرور deploy می‌کند، و می‌خواهد Nginx را **عملی** یاد بگیرد — نه فقط directiveها را حفظ کند. Linux و Git هم به‌عنوان ابزارهای روزمره کنار Nginx آمده‌اند.
 
 ---
 
-## زمان‌بندی (تقریبی)
+## ساختار کتاب
 
-| هدف | زمان |
-| --- | ---: |
-| استفاده در پروژه | ۱–۲ ماه |
-| production / DevOps | ۳–۶ ماه |
-| معماری و performance | ۶–۱۲ ماه |
-| سطح پژوهشی | ۱۲–۱۸ ماه |
+| بخش                                               | موضوع                                     |
+| ------------------------------------------------- | ----------------------------------------- |
+| [Nginx · پایه عملی](/category/فصل-۱--پایه-عملی)   | نصب، کانفیگ، proxy، HTTPS                 |
+| [Nginx · Production](/category/فصل-۲--production) | timeout، cache، rate limit، observability |
+| [Nginx · شبکه و OS](/category/فصل-۳--شبکه-و-os)   | TCP، epoll، benchmark                     |
+| [Linux · خط فرمان](/category/خط-فرمان)            | shell، سرویس، deploy                      |
+| [Linux · grep](/category/grep)                    | جستجو در log و کد                         |
+| [Git · Pull و Merge](/category/pull-و-merge)      | pull، rebase، fast-forward                |
+
+برای **مرور سریع** هر بخش ← [فهرست مرور](review).
 
 ---
 
-## روش کار
+## روش مطالعه
 
-```text
-بخوان → کانفیگ کن → خراب کن → تست بگیر → log ببین → توضیح بده → درست کن
-```
+> بخوان ← کانفیگ کن ← خراب کن ← log ببین ← توضیح بده ← درست کن
 
-برای هر موضوع: مستندات رسمی، یک config کوچک، عمداً یک چیز را اشتباه کن، log و metric را چک کن، بعد config را بهتر کن.
+برای هر درس: یک config کوچک، عمداً یک چیز را اشتباه کن، error log را بخوان، بعد config را بهتر کن.

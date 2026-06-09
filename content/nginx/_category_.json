@@ -1,0 +1,8 @@
+{
+  "label": "Nginx",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "nginx/index"
+  }
+}

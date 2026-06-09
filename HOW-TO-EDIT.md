@@ -30,16 +30,16 @@ npm run typecheck  # بررسی TypeScript
 
 ## فصل جدید
 
-1. فایل `.md` در `content/` بساز.
-2. در `sidebars.ts` اضافه کن.
-3. لینک در `content/introduction.md` و `README.md`.
+1. فایل `.md` در پوشهٔ مناسب داخل `content/` بساز (هر فایل = یک موضوع کوچک).
+2. اگر دستهٔ جدید است، `_category_.json` در همان پوشه اضافه کن.
+3. خلاصهٔ یک‌خطی را در `content/review.md` به‌روز کن.
 
-Front matter:
+Front matter (مقادیر با `:` را در گیومه بگذار):
 
 ```yaml
 ---
-title: عنوان
-sidebar_label: برچسب
+title: "عنوان درس"
+description: "یک جمله خلاصه برای SEO و مرور"
 sidebar_position: 2
 ---
 ```
@@ -72,7 +72,7 @@ className: en-doc
 - sidebar سمت راست، TOC سمت چپ
 - کد همیشه LTR
 
-تنظیمات: `docusaurus.config.ts` → `i18n.localeConfigs.fa`  
+تنظیمات: `docusaurus.config.ts` ← `i18n.localeConfigs.fa`  
 استایل: `src/css/custom.css`
 
 صفحه انگلیسی: front matter `className: en-doc`

@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'یادگیری Nginx',
-  tagline: 'Nginx، Linux و Git',
+  title: 'زیرساخت عملی وب',
+  tagline: 'راهنمای Nginx، Linux و Git برای توسعه‌دهنده',
 
   url: 'https://yasersharifi.github.io',
   baseUrl: '/learn-nginx/',
@@ -53,30 +53,52 @@ const config: Config = {
         autoCollapseCategories: true,
       },
     },
+    colorMode: {
+      defaultMode: 'light',
+      respectPrefersColorScheme: true,
+    },
     navbar: {
-      title: 'یادگیری Nginx',
+      title: 'زیرساخت عملی وب',
       hideOnScroll: true,
       items: [
         {
+          type: 'doc',
+          docId: 'review',
+          position: 'right',
+          label: 'مرور',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
-          position: 'left',
+          position: 'right',
           label: 'فهرست',
         },
         {
           href: 'https://github.com/yasersharifi/learn-nginx',
           label: 'GitHub',
-          position: 'right',
+          position: 'left',
         },
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `یادگیری Nginx · ${new Date().getFullYear()}`,
+      links: [
+        {
+          title: 'کتاب',
+          items: [
+            {label: 'پیش‌گفتار', to: '/'},
+            {label: 'مرور بخش‌ها', to: '/review'},
+            {label: 'Nginx', to: '/nginx'},
+            {label: 'Linux', to: '/linux'},
+            {label: 'Git', to: '/git'},
+          ],
+        },
+      ],
+      copyright: `زیرساخت عملی وب · ${new Date().getFullYear()}`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneLight,
+      darkTheme: prismThemes.nightOwl,
       additionalLanguages: ['bash', 'nginx', 'json', 'yaml'],
     },
   } satisfies Preset.ThemeConfig,

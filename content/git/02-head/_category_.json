@@ -1,0 +1,10 @@
+{
+  "label": "HEAD",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "HEAD در Git",
+    "description": "اشاره‌گر، detached HEAD و reset."
+  },
+  "collapsed": true
+}
