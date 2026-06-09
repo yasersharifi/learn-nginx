@@ -10,6 +10,7 @@
 | Nginx | [پایه عملی](content/nginx/01-basics/) · [Production](content/nginx/02-production/) · [شبکه و OS](content/nginx/03-systems/) |
 | Linux | [خط فرمان](content/linux/01-shell/) · [grep](content/linux/02-grep/) |
 | Git | [Pull/Merge](content/git/01-pull-merge/) · [HEAD](content/git/02-head/) · [سناریوها](content/git/03-scenarios/) |
+| **مرجع دستورات** | [Linux](content/commands/linux/) · [Docker](content/commands/docker/) · [Compose](content/commands/docker-compose/) · [Nginx](content/commands/nginx/) · [سایر](content/commands/other/) |
 
 ## اجرای محلی
 

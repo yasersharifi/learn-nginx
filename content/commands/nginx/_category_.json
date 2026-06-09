@@ -1,0 +1,10 @@
+{
+  "label": "مرجع · Nginx",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "دستورات Nginx",
+    "description": "سرویس، تست کانفیگ، log و debug."
+  },
+  "collapsed": true
+}

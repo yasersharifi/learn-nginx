@@ -29,6 +29,7 @@ sidebar_position: 1
 | [Linux · خط فرمان](/category/خط-فرمان)            | shell، سرویس، deploy                      |
 | [Linux · grep](/category/grep)                    | جستجو در log و کد                         |
 | [Git · Pull و Merge](/category/pull-و-merge)      | pull، rebase، fast-forward                |
+| [مرجع دستورات](/commands)                        | Linux، Docker، Nginx، Git — cheat sheet   |
 
 برای **مرور سریع** هر بخش ← [فهرست مرور](review).
 

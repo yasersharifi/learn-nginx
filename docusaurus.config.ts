@@ -68,6 +68,12 @@ const config: Config = {
           label: 'مرور',
         },
         {
+          type: 'doc',
+          docId: 'commands/index',
+          position: 'right',
+          label: 'دستورات',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'right',
@@ -91,6 +97,7 @@ const config: Config = {
             {label: 'Nginx', to: '/nginx'},
             {label: 'Linux', to: '/linux'},
             {label: 'Git', to: '/git'},
+            {label: 'مرجع دستورات', to: '/commands'},
           ],
         },
       ],

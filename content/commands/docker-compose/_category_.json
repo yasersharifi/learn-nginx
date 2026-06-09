@@ -1,0 +1,10 @@
+{
+  "label": "Docker Compose",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "دستورات Docker Compose",
+    "description": "بالا آوردن، توقف، build و log سرویس‌ها."
+  },
+  "collapsed": true
+}

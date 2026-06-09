@@ -1,0 +1,10 @@
+{
+  "label": "مرجع · Git",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "دستورات Git",
+    "description": "کار روزمره — status، pull، push، branch."
+  },
+  "collapsed": true
+}

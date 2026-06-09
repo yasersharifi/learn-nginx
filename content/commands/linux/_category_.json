@@ -1,0 +1,10 @@
+{
+  "label": "مرجع · Linux",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "دستورات Linux",
+    "description": "مسیر، فایل، جستجو، پروسس، شبکه و systemd."
+  },
+  "collapsed": true
+}

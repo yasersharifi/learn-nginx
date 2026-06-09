@@ -109,3 +109,18 @@ sidebar_position: 2
 | سناریوها        | ۲۰ حالت رایج با جواب                |
 
 [شروع Git ←](/category/pull-و-merge)
+
+---
+
+## مرجع دستورات
+
+| فصل | خلاصه |
+| --- | --- |
+| Linux | مسیر، فایل، grep، پروسس، شبکه، systemd، SSH |
+| Docker | image، run، exec، log، volume، network |
+| Docker Compose | up/down، build، logs، exec |
+| Nginx | systemctl، `nginx -t`، مسیرها، log، debug |
+| Git | status، commit، pull، push، branch، stash |
+| سایر | curl، PM2، DB، cron، ufw، چک‌لیست debug |
+
+[شروع مرجع دستورات ←](/commands)
