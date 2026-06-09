@@ -16,10 +16,16 @@
 
 ## کتاب (mdBook)
 
+**آنلاین:** https://yasersharifi.github.io/learn-nginx/
+
+**محلی:**
+
 ```bash
 ./scripts/build-book.sh
-open book/index.html
+./.bin/mdbook serve   # http://localhost:3000
 ```
+
+اولین بار روی GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions** را فعال کن. بعد از هر push به `main`، workflow کتاب را deploy می‌کند.
 
 ## ویرایش
 

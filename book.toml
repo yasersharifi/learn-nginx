@@ -15,6 +15,8 @@ preferred-dark-theme = "navy"
 smart-punctuation = true
 additional-css = ["theme/custom.css"]
 no-section-label = true
+site-url = "/learn-nginx/"
+git-repository-url = "https://github.com/yasersharifi/learn-nginx"
 
 [output.html.search]
 enable = true

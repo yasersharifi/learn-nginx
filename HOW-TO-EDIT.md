@@ -84,11 +84,19 @@ nginx -t
 
 ## mdBook
 
+**GitHub Pages:** https://yasersharifi.github.io/learn-nginx/
+
+Deploy خودکار با push به `main` (workflow: `.github/workflows/pages.yml`).
+
+اولین بار: repo → **Settings → Pages → Source: GitHub Actions**.
+
 ```bash
-python3 scripts/prepare-mdbook.py   # sync content/ → src/
-./scripts/build-book.sh             # prepare + build
-./.bin/mdbook serve                 # پیش‌نمایش localhost:3000
+python3 scripts/prepare-mdbook.py
+./scripts/build-book.sh
+./.bin/mdbook serve                 # localhost:3000 (بهتر از file://)
 ```
+
+`book.toml` برای GitHub Pages با `site-url = "/learn-nginx/"` تنظیم شده.
 
 ---
 
