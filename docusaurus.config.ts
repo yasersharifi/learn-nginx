@@ -3,14 +3,14 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'زیرساخت عملی وب',
-  tagline: 'راهنمای Nginx، Linux و Git برای توسعه‌دهنده',
+  title: "The Developer's Edge Stack",
+  tagline: 'Nginx, Linux & Git for Daily Web Operations',
 
   url: 'https://yasersharifi.github.io',
-  baseUrl: '/learn-nginx/',
+  baseUrl: '/The_Developers_Edge_Stack/',
 
   organizationName: 'yasersharifi',
-  projectName: 'learn-nginx',
+  projectName: 'The_Developers_Edge_Stack',
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
@@ -36,7 +36,7 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           sidebarCollapsible: true,
-          editUrl: 'https://github.com/yasersharifi/learn-nginx/edit/main/',
+          editUrl: 'https://github.com/yasersharifi/The_Developers_Edge_Stack/edit/main/',
         },
         blog: false,
         theme: {
@@ -58,7 +58,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'زیرساخت عملی وب',
+      title: "The Developer's Edge Stack",
       hideOnScroll: true,
       items: [
         {
@@ -86,7 +86,7 @@ const config: Config = {
           label: 'فهرست',
         },
         {
-          href: 'https://github.com/yasersharifi/learn-nginx',
+          href: 'https://github.com/yasersharifi/The_Developers_Edge_Stack',
           label: 'GitHub',
           position: 'left',
         },
@@ -108,7 +108,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `زیرساخت عملی وب · ${new Date().getFullYear()}`,
+      copyright: `The Developer's Edge Stack · ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.oneLight,

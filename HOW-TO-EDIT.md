@@ -3,7 +3,7 @@
 ## ساختار
 
 ```text
-learn-nginx/
+The_Developers_Edge_Stack/
 ├── content/                  ← markdown (منبع اصلی)
 ├── static/fonts/               ← Vazir، Inter، JetBrains Mono
 ├── src/css/custom.css          ← RTL، فونت‌ها
@@ -21,7 +21,7 @@ learn-nginx/
 
 ```bash
 npm install
-npm start          # http://localhost:3000/learn-nginx/
+npm start          # http://localhost:3000/The_Developers_Edge_Stack/
 npm run build
 npm run typecheck  # بررسی TypeScript
 ```
@@ -81,7 +81,7 @@ className: en-doc
 
 ## GitHub Pages
 
-https://yasersharifi.github.io/learn-nginx/
+https://yasersharifi.github.io/The_Developers_Edge_Stack/
 
 Deploy با push به `main` — workflow: `.github/workflows/pages.yml`
 

@@ -1,26 +1,26 @@
-# زیرساخت عملی وب
+# The Developer's Edge Stack
 
-راهنمای Nginx، Linux و Git برای توسعه‌دهنده — هر درس یک صفحه، مثل کتاب.
+Nginx, Linux & Git for daily web operations — one topic per page, like a real book.
 
-**آنلاین:** https://yasersharifi.github.io/learn-nginx/
+**Live:** https://yasersharifi.github.io/The_Developers_Edge_Stack/
 
-| بخش | فصل‌ها |
+| Section | Chapters |
 | --- | --- |
-| [پیش‌گفتار](content/introduction.md) · [مرور](content/review.md) | |
-| Nginx | [پایه عملی](content/nginx/01-basics/) · [Production](content/nginx/02-production/) · [شبکه و OS](content/nginx/03-systems/) |
-| Linux | [خط فرمان](content/linux/01-shell/) · [grep](content/linux/02-grep/) |
-| Git | [Pull/Merge](content/git/01-pull-merge/) · [HEAD](content/git/02-head/) · [سناریوها](content/git/03-scenarios/) |
-| **مرجع دستورات** | [Linux](content/commands/linux/) · [Docker](content/commands/docker/) · [Compose](content/commands/docker-compose/) · [Nginx](content/commands/nginx/) · [سایر](content/commands/other/) |
+| [Introduction](content/introduction.md) · [Review](content/review.md) · [Daily guide](content/daily-guide.md) | |
+| Nginx | [Basics](content/nginx/01-basics/) · [Production](content/nginx/02-production/) · [Network & OS](content/nginx/03-systems/) |
+| Linux | [Shell](content/linux/01-shell/) · [grep](content/linux/02-grep/) |
+| Git | [Pull/Merge](content/git/01-pull-merge/) · [HEAD](content/git/02-head/) · [Scenarios](content/git/03-scenarios/) |
+| **Command reference** | [Linux](content/commands/linux/) · [Docker](content/commands/docker/) · [Compose](content/commands/docker-compose/) · [Nginx](content/commands/nginx/) · [Other](content/commands/other/) |
 
-## اجرای محلی
+## Local development
 
 ```bash
 npm install
-npm start          # http://localhost:3000/learn-nginx/
+npm start          # http://localhost:3000/The_Developers_Edge_Stack/
 npm run build
 npm run typecheck
 ```
 
-## ویرایش
+## Editing
 
-محتوا در [`content/`](content/). راهنما: [HOW-TO-EDIT.md](HOW-TO-EDIT.md)
+Content lives in [`content/`](content/). See [HOW-TO-EDIT.md](HOW-TO-EDIT.md).
