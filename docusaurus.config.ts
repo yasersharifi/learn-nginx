@@ -63,6 +63,12 @@ const config: Config = {
       items: [
         {
           type: 'doc',
+          docId: 'daily-guide',
+          position: 'right',
+          label: 'راهنمای روزمره',
+        },
+        {
+          type: 'doc',
           docId: 'review',
           position: 'right',
           label: 'مرور',
@@ -93,6 +99,7 @@ const config: Config = {
           title: 'کتاب',
           items: [
             {label: 'پیش‌گفتار', to: '/'},
+            {label: 'راهنمای عملیات روزمره', to: '/daily-guide'},
             {label: 'مرور بخش‌ها', to: '/review'},
             {label: 'Nginx', to: '/nginx'},
             {label: 'Linux', to: '/linux'},

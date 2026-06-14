@@ -1,12 +1,25 @@
 ---
 title: مرور بخش‌ها
 description: خلاصهٔ کوتاه هر فصل برای مرور سریع قبل از مطالعه یا امتحان
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # مرور بخش‌ها
 
 خلاصهٔ یک‌خطی هر قسمت — برای مرور قبل از شروع یا بعد از اتمام فصل.
+
+---
+
+## راهنمای عملیات روزمره
+
+| موضوع | خلاصه |
+| --- | --- |
+| Nginx | `nginx -t`، reload امن، جدول 502/504/404، workflow debug |
+| Linux | `curl`، `ss`، `lsof`، journalctl، grep در log |
+| Git | pull/rebase/merge، divergent branches، force-with-lease |
+| یکپارچه | چک‌لیست ۵ دقیقه‌ای وقتی سایت down است |
+
+[شروع راهنمای روزمره ←](/daily-guide)
 
 ---
 
